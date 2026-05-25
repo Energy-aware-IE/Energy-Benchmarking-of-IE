@@ -133,7 +133,7 @@ sweep_orchestrator.sh
 
 ### Prerequisites
 
-- Multi-GPU compute node(s) (tested with 4× H100 / A100 80 GB per node)
+- Multi-GPU compute node(s) (tested with 4× H100 / A100 40 GB per node)
 - SLURM workload manager
 - Singularity/Apptainer (for containerized vLLM serving)
 - Python ≥ 3.10
