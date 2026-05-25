@@ -1,0 +1,35 @@
+{#-----------------------------------------------#}
+{# chatml_llama2.jinja                            #}
+{# For Llama-2-7b-chat-hf OpenAI‐compatible API   #}
+{#-----------------------------------------------#}
+
+{%- if messages[0]["role"] == "system" %}
+  {%- set system_message = messages[0]["content"] %}
+  {%- set loop_messages = messages[1:] %}
+{%- else %}
+  {%- set system_message = None %}
+  {%- set loop_messages = messages %}
+{%- endif %}
+
+{# Enforce user/assistant alternation #}
+{%- for msg in loop_messages %}
+  {%- if (msg["role"] == "user") != (loop.index0 % 2 == 0) %}
+    {{- raise_exception("Roles must alternate: user, assistant, user, assistant…") }}
+  {%- endif %}
+{%- endfor %}
+
+{{- bos_token }}
+{#— Emit a single instruction block per user turn —#}
+{%- for msg in loop_messages %}
+  {%- if msg["role"] == "user" %}
+    {# First user block: include system if present #}
+    {%- if loop.index0 == 0 and system_message %}
+[INST] <<SYS>>{{ system_message }}<</SYS>>
+{{ msg["content"] }} [/INST]
+    {%- else %}
+[INST] {{ msg["content"] }} [/INST]
+    {%- endif %}
+  {%- elif msg["role"] == "assistant" %}
+{{ msg["content"] }}{{ eos_token }}
+  {%- endif %}
+{%- endfor %}
