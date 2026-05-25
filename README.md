@@ -21,6 +21,8 @@ serving all models via **vLLM** on multi-GPU HPC nodes.
 | Event Extraction (EE) | RAMS | English |
 | Relation Extraction (RE) | DocRED | English |
 
+
+
 ### Models
 
 | Model | Parameters |
@@ -81,6 +83,8 @@ Energy-Benchmarking-of-IE/
 ├── docker/                         # Container definitions
 │   ├── inference/Dockerfile            # Training/fine-tuning container
 │   └── vllm_serve_otel/Dockerfile      # vLLM serving container with OpenTelemetry
+├── results/
+│   └── results.csv                     # Aggregated results (NER, EE, RE — 1 696 rows)
 ├── templates/                      # Chat format Jinja2 templates
 │   ├── chatml.jinja
 │   ├── llama2.jinja
@@ -192,6 +196,36 @@ combination. Results are logged to MLflow automatically.
 
 ---
 
+## Results
+
+`results/results.csv` contains the aggregated experimental results for all
+completed tasks. Each row is one (task, model, language, format_mode,
+prompt_style) observation.
+
+| Column | Description |
+|---|---|
+| `task` | `NER`, `EE`, or `RE` |
+| `model` | `4B`, `12B`, `27B`, `70B` |
+| `language` | ISO code (NER: 10 langs; EE/RE: `en`) |
+| `format_mode` | `json__false`, `json__json_xgrammar`, `yaml__false`, `dst__false` |
+| `prompt_style` | Integer prompt index |
+| `f1` | Task F1 score (`ner_f1` / `ee_arg_c_f1` / `re_f1`) |
+| `energy_j` | Total GPU energy in Joules (idle-corrected for NER) |
+| `J_per_entity` | Joules per predicted entity (or argument / triple) |
+| `J_per_TP` | Joules per total token processed |
+| `F1_per_J` | F1 per Joule (energy efficiency) |
+
+**Coverage** (rows / expected):
+
+| Task | Models | Languages | Formats | Prompts | Rows | Complete |
+|---|---|---|---|---|---|---|
+| NER (XTREME) | 4 | 10 | 4 | 9 | 1 440 | 100% ✓ |
+| Event Extraction | 4 | 1 | 4 | 8 | 128 | 100% ✓ |
+| Relation Extraction | 4 | 1 | 4 | 8 | 128 | 100% ✓ |
+| **Total** | | | | | **1 696** | |
+
+---
+
 ## Monitoring
 
 Start Prometheus and Grafana with the provided configs:
@@ -221,3 +255,11 @@ Anonymous submission. Citation will be added upon acceptance.
 Code is released under the MIT License.
 Datasets used (XTREME, MasakhaNER 2.0, RAMS, DocRED) are subject to their own
 respective licenses — please consult each dataset's repository for details.
+
+---
+
+## Data Notes
+
+- `results/results.csv` covers NER, EE, and RE (all 100% complete).
+  the sweep scripts and evaluation code remain in the repository for
+  reproducibility.
