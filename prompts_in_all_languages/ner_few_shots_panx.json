@@ -1,0 +1,132 @@
+{
+  "de": [
+    {
+      "role": "user",
+      "content": "Angela Merkel sprach bei den Vereinten Nationen in New York."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"Angela Merkel\"],\n  \"ORG\": [\"Vereinten Nationen\"],\n  \"LOC\": [\"New York\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Der Journalist Peter Müller besuchte die Universität Heidelberg und sprach mit der CEO Sabine Keller von Siemens in München."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"Peter Müller\", \"Sabine Keller\"],\n  \"ORG\": [\"Universität Heidelberg\", \"Siemens\"],\n  \"LOC\": [\"München\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sie traf die Kanzlerin in Berlin, aber er erwähnte keine Namen."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\"Berlin\"]\n}"
+    }
+  ],
+  "en": [
+    {
+      "role": "user",
+      "content": " Barack Obama met Tim Cook at Apple in Cupertino."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"Barack Obama\", \"Tim Cook\"],\n  \"ORG\": [\"Apple\"],\n  \"LOC\": [\"Cupertino\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sundar Pichai discussed AI with Satya Nadella at Microsoft headquarters in Redmond."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"Sundar Pichai\", \"Satya Nadella\"],\n  \"ORG\": [\"Microsoft\"],\n  \"LOC\": [\"Redmond\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "She spoke to the president in Washington."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\"Washington\"]\n}"
+    }
+  ],
+  "ar": [
+    {
+      "role": "user",
+      "content": "زار محمد صلاح نادي ليفربول في لندن."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"محمد صلاح\"],\n  \"ORG\": [\"نادي ليفربول\"],\n  \"LOC\": [\"لندن\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "التقى أحمد علي مع إيلون ماسك في شركة تسلا بمدينة سان فرانسيسكو."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"أحمد علي\", \"إيلون ماسك\"],\n  \"ORG\": [\"شركة تسلا\"],\n  \"LOC\": [\"سان فرانسيسكو\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "هو زار الرئيس في القاهرة."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\"القاهرة\"]\n}"
+    }
+  ],
+  "bg": [
+    {
+      "role": "user",
+      "content": "Румен Радев посети Европейската комисия в Брюксел."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"Румен Радев\"],\n  \"ORG\": [\"Европейската комисия\"],\n  \"LOC\": [\"Брюксел\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Илон Мъск обсъди проект с Мария Петрова в Софийски университет в София."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"Илон Мъск\", \"Мария Петрова\"],\n  \"ORG\": [\"Софийски университет\"],\n  \"LOC\": [\"София\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Тя говори с президента в Пловдив."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\"Пловдив\"]\n}"
+    }
+  ],
+  "zh": [
+    {
+      "role": "user",
+      "content": "习近平在北京会见了联合国秘书长安东尼奥·古特雷斯。"
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"习近平\", \"安东尼奥·古特雷斯\"],\n  \"ORG\": [\"联合国\"],\n  \"LOC\": [\"北京\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "马云在上海与李强在阿里巴巴总部会面。"
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"马云\", \"李强\"],\n  \"ORG\": [\"阿里巴巴\"],\n  \"LOC\": [\"上海\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "他在北京见到了校长，但没有说出名字。"
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\"北京\"]\n}"
+    }
+  ]
+}

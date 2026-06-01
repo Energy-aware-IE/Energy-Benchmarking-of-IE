@@ -1,0 +1,523 @@
+{
+  "twi": [
+    {
+      "role": "user",
+      "content": "Sentence: Kofi Annan kɔɔ United Nations dwumadibea wɔ New York."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"Kofi Annan\"],\n  \"ORG\": [\"United Nations\"],\n  \"LOC\": [\"New York\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sentence: Nana Akufo-Addo ne Osei Tutu hyiaa wɔ Bank of Ghana wɔ Accra."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"Nana Akufo-Addo\", \"Osei Tutu\"],\n  \"ORG\": [\"Bank of Ghana\"],\n  \"LOC\": [\"Accra\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sentence: Ɔne ɔmanpanyin bɔɔ nkɔmmɔ wɔ Parliament wɔ Kumasi."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [\"Parliament\"],\n  \"LOC\": [\"Kumasi\"]\n}"
+    }
+  ],
+  "bam": [
+    {
+      "role": "user",
+      "content": "Sentence: Modibo Keïta taa ka sɔrɔ ka kɛ baara ni Université de Bamako i Bamako, Mali."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"Modibo Keïta\"],\n  \"ORG\": [\"Université de Bamako\"],\n  \"LOC\": [\"Bamako\", \"Mali\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sentence: Dugutigisigi, mɔgɔbaw ka sukoɲɛw, duguncinin cɛw ni muso jɔdatigiw ka diɲɛnatigɛ."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": []\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sentence: Sababu Mali lasigidenso, min bɛ Kanada, bolo ka kokɛtaw nɔgɔyadabaw di, minnu bɛ nin jamana in kɔnɔ."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\"Mali\", \"Kanada\"]\n}"
+    }
+  ],
+  "ewe": [
+    {
+      "role": "user",
+      "content": "Sentence: Kofi Annan ɖe asi le University of Ghana le Accra, Ghana."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"Kofi Annan\"],\n  \"ORG\": [\"University of Ghana\"],\n  \"LOC\": [\"Accra\", \"Ghana\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sentence: Esiae nye lɔlɔ̃nya sie nɔ hadzila la kple eƒe ɖevime lɔlɔ̃tɔ domee"
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": []\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sentence: France ƒe dukplɔla ɖe gbeƒã kadede yeye me nɔnɔ kple Afrique."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\"France\", \"Afrique\"]\n}"
+    }
+  ],
+  "fon": [
+    {
+      "role": "user",
+      "content": "Sentence: Angélique Kidjo zɔ mi na Fondation Zinsou le Cotonou, Benin."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"Angélique Kidjo\"],\n  \"ORG\": [\"Fondation Zinsou\"],\n  \"LOC\": [\"Cotonou\", \"Benin\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sentence: È ná nyín nyɛ́ ǎ è ká ná lɛ́ɛ nyín tító ce ǎ., mɔ̀ wɛ Patrice Talon ɖɔ nù Christophe Boisbouvier."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"Patrice Talon\", \"Christophe Boisbouvier\"],\n  \"ORG\": [],\n  \"LOC\": []\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sentence: Gànhɔnyitɔ́ núkɔ́n tɔn Hamed Bakayoko sɔ́ èɖé dó savɔ̀ dó tò ɔ̀ tà mɛ̀."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"Hamed Bakayoko\"],\n  \"ORG\": [],\n  \"LOC\": []\n}"
+    }
+  ],
+  "hau": [
+    {
+      "role": "user",
+      "content": "Sentence: Muhammadu Buhari ya ziyarci ofishin BBC Hausa a Abuja, Najeriya."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"Muhammadu Buhari\"],\n  \"ORG\": [\"BBC Hausa\"],\n  \"LOC\": [\"Abuja\", \"Najeriya\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sentence: A cewar babbar sakatariyar ma'aikatar ilimi ta jihar Kemi Adeosun, ta ce, yanzu an janye komawa makarantun da a baya aka amince su koma karatu a ranar Litinin."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"Kemi Adeosun\"],\n  \"ORG\": [],\n  \"LOC\": []\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sentence: Ya yi magana da shugaban ƙasa a majalisar dokoki a Abuja."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [\"majalisar dokoki\"],\n  \"LOC\": [\"Abuja\"]\n}"
+    }
+  ],
+  "ibo": [
+    {
+      "role": "user",
+      "content": "Sentence: Chimamanda Ngozi Adichie gara University of Lagos na Lagos, Naịjịrịa."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"Chimamanda Ngozi Adichie\"],\n  \"ORG\": [\"University of Lagos\"],\n  \"LOC\": [\"Lagos\", \"Naịjịrịa\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sentence: Sir Chuka Nnabuife, bụ onye agha nke ụka ( knight of the church ) ma bụrụ onye ji ọkwa dịka onyeisi ( MD / CEO ) Anambra Newspapers and Printing Corporation ( ANPC ), Awka kọwara ụbọchị ahụ dịka ụbọchị ndị ụka Katọlik ji agwa ụwa onye ha na - eso."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"Sir Chuka Nnabuife\"],\n  \"ORG\": [\"Anambra Newspapers and Printing Corporation\", \"ANPC\"],\n  \"LOC\": [\"Awka\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sentence: Ọ gwara onye isi ala okwu na ụlọ nzuko omeiwu na Abuja."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [\"ụlọ nzuko omeiwu\"],\n  \"LOC\": [\"Abuja\"]\n}"
+    }
+  ],
+  "kin": [
+    {
+      "role": "user",
+      "content": "Sentence: Paul Kagame yasura Kaminuza y’u Rwanda i Kigali, Rwanda."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"Paul Kagame\"],\n  \"ORG\": [\"Kaminuza y’u Rwanda\"],\n  \"LOC\": [\"Kigali\", \"Rwanda\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sentence: Ikibazo cyabaye ni imitingito gusa kandi nayo ibipimo bigaragaza ko yagiye igabanuka mu ngano no mu bukana ku buryo nta mpungenge biteye."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": []\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sentence: Yavugiye n’ umukuru w’igihugu ku ngoro y’inteko ishinga amategeko i Kigali."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [\"ingoro y’inteko ishinga amategeko\"],\n  \"LOC\": [\"Kigali\"]\n}"
+    }
+  ],
+  "lug": [
+    {
+      "role": "user",
+      "content": "Sentence: Bobi Wine yalambula Makerere University e Kampala, Uganda."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"Bobi Wine\"],\n  \"ORG\": [\"Makerere University\"],\n  \"LOC\": [\"Kampala\", \"Uganda\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sentence: Abamu ku bali ku lusegere ne Bukenya bagamba nti yali akitegedde nti Museveni anoonya omuntu ow'okudda mu kifo kye eky'omumyuka wa pulezidenti."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"Bukenya\", \"Museveni\"],\n  \"ORG\": [],\n  \"LOC\": []\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sentence: Akakiiko k'amagye akakulemberwa Paulo Muwanga era nga Yoweri Museveni ye mummyuka waako, kaamummamula ku ntebe mu Maayi nga 12, 1980."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"Paulo Muwanga\", \"Yoweri Museveni\"],\n  \"ORG\": [],\n  \"LOC\": [\"Kampala\"]\n}"
+    }
+  ],
+  "luo": [
+    {
+      "role": "user",
+      "content": "Sentence: Raila Odinga odwogo e Kisumu, Kenya, ka oduogo koa e ODM office."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"Raila Odinga\"],\n  \"ORG\": [\"ODM\"],\n  \"LOC\": [\"Kisumu\", \"Kenya\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sentence: Ne nitie bathe komachielo mar o ganda matindogo ( ata malo abiryo e wi mia ) ma ne owacho ni gitamore chanjo go kaluwore ni odhi ataro mar kitgi gi timbegi kata yie mar gi."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": []\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sentence: Ne owacho gi ruoth e od wach mar pálamɛnt e Kisumu."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\"Kisumu\"]\n}"
+    }
+  ],
+  "mos": [
+    {
+      "role": "user",
+      "content": "Sentence: Roch Marc Christian Kaboré raaga Ouagadougou, Burkina Faso, n ye taa Zaman Laye."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"Roch Marc Christian Kaboré\"],\n  \"ORG\": [],\n  \"LOC\": [\"Ouagadougou\", \"Burkina Faso\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sentence: Arabɩ sawʋdit tẽnga ãbasaad sẽn pak a kʋɩlẽns Waogdg yʋʋm 2002 wã tɛka, tõnd tʋʋmd n taarã kẽeda ne waoog taaba, la ra kẽe tẽnga yel - soaadɩ kẽer pʋga."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\"Waogdg\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sentence: A n yamb n leba na naaba wubrga la Parlement la Ouagadougou."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [\"Parlement\"],\n  \"LOC\": [\"Ouagadougou\"]\n}"
+    }
+  ],
+  "pcm": [
+    {
+      "role": "user",
+      "content": "Sentence: Burna Boy go University of Port Harcourt for Port Harcourt, Nigeria."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"Burna Boy\"],\n  \"ORG\": [\"University of Port Harcourt\"],\n  \"LOC\": [\"Port Harcourt\", \"Nigeria\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sentence: Thus, given di gas reserves wey dey exist, e shock to see say Naija no dey lead di continent gas industry."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\"Naija\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sentence: Di governor of Borno State don fully key inside Mr President idea to achieve food security, irrespective of di challenge wey di state dey encounte."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\"Borno State\"]\n}"
+    }
+  ],
+  "sna": [
+    {
+      "role": "user",
+      "content": "Sentence: Strive Masiyiwa akashanyira Econet Wireless kuHarare, Zimbabwe."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"Strive Masiyiwa\"],\n  \"ORG\": [\"Econet Wireless\"],\n  \"LOC\": [\"Harare\", \"Zimbabwe\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sentence: Mutevedzeri wemutauriri webato reMDC T, Muzvare Thabitha Khumalo, vati bato ravo rine hurombo kumhuri yekwaCharumbira pamwe nekubato reZanu PF nekushaya kwaVaCharumbira."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"Thabitha Khumalo\", \"yekwaCharumbira\", \"kwaVaCharumbira\"],\n  \"ORG\": [\"reMDC T\", \"reZanu PF\"],\n  \"LOC\": []\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sentence: VaDhlakama vakashaya neChina nechirwere chemoyo asi vamwe vachiti vakafa nechirwere cheshuga."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"VaDhlakama\"],\n  \"ORG\": [],\n  \"LOC\": []\n}"
+    }
+  ],
+  "swa": [
+    {
+      "role": "user",
+      "content": "Sentence: Uhuru Kenyatta alitembelea Chuo Kikuu cha Nairobi jijini Nairobi, Kenya."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"Uhuru Kenyatta\"],\n  \"ORG\": [\"Chuo Kikuu cha Nairobi\"],\n  \"LOC\": [\"Nairobi\", \"Kenya\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sentence: Alikuwa akiongoza ibada katika kanisa kuu la Mtakatifu Petro, mjini Vatican, ambayo ilihudhuriwa na waumini wachache kuliko ilivyo kawaida, na ambayo ilipeperushwa moja kwa moja kwa njia ya mtandao."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\"kanisa kuu la Mtakatifu Petro\", \"Vatican\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sentence: Sijaona kitu kama hicho maishani mwangu."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": []\n}"
+    }
+  ],
+  "tsn": [
+    {
+      "role": "user",
+      "content": "Sentence: Mokgweetsi Masisi o etetse Gaborone, Botswana, a kopana le University of Botswana."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"Mokgweetsi Masisi\"],\n  \"ORG\": [\"University of Botswana\"],\n  \"LOC\": [\"Gaborone\", \"Botswana\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sentence: Ke leka go tlhaloganya ka fa tlhogong ya me ke eng se se ba diragaletseng, ba dira eng, go diragala eng ka lefatshe leo ba le dutseng ka gonne ga ba na mabitla, a rialo."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": []\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sentence: O buile le moporesidente kwa Palamente mo Gaborone."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [\"Palamente\"],\n  \"LOC\": [\"Gaborone\"]\n}"
+    }
+  ],
+  "wol": [
+    {
+      "role": "user",
+      "content": "Sentence: Youssou N'Dour dem ci RTS ci Dakar, Senegaal."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"Youssou N'Dour\"],\n  \"ORG\": [\"RTS\"],\n  \"LOC\": [\"Dakar\", \"Senegal\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sentence: Bu ko Rfi laajee ci àllarba jii, dafa tuumaal njiitu këlëbu Medinaa bi."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [\"Rfi\"],\n  \"LOC\": [\"Medinaa\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sentence: Mu wax ak president ci Assemblée nationale ci Dakar."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [\"Assemblée nationale\"],\n  \"LOC\": [\"Dakar\"]\n}"
+    }
+  ],
+  "xho": [
+    {
+      "role": "user",
+      "content": "Sentence: Nelson Mandela watyelela iYunivesithi yaseKapa eKapa, eMzantsi Afrika."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"Nelson Mandela\"],\n  \"ORG\": [\"iYunivesithi yaseKapa\"],\n  \"LOC\": [\"eKapa\", \"eMzantsi Afrika\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sentence: Umasipala uzimiselele ukuvuselela umbhoxo eNgquza."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\"Ngquza\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sentence: Uthethe no mongameli ePalamente eKapa."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [\"Palamente\"],\n  \"LOC\": [\"Kapa\"]\n}"
+    }
+  ],
+  "yor": [
+    {
+      "role": "user",
+      "content": "Sentence: Wole Soyinka ṣàbẹ̀wò sí University of Ibadan ní Ìbàdàn, Nàìjíríà."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"Wole Soyinka\"],\n  \"ORG\": [\"University of Ibadan\"],\n  \"LOC\": [\"Ìbàdàn\", \"Nàìjíríà\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sentence: Gómìnà ìpínlẹ̀ Èkó, ọ̀gbẹ́ni Akinwunmi Ambode gba àmì - ẹyẹ ( Man of the Year )."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"Akinwunmi Ambode\"],\n  \"ORG\": [],\n  \"LOC\": [\"Èkó\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sentence: Ó bá ààrẹ sọ̀rọ̀ ní Ṣọ́ọ̀ṣì Àgbàjọ ìgbìmọ̀ ní Ìbàdàn."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [\"Ìgbìmọ̀\"],\n  \"LOC\": [\"Ìbàdàn\"]\n}"
+    }
+  ],
+  "zul": [
+    {
+      "role": "user",
+      "content": "Sentence: Cyril Ramaphosa uvakashele eThekwini eNingizimu Afrika."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"Cyril Ramaphosa\"],\n  \"ORG\": [],\n  \"LOC\": [\"eThekwini\", \"eNingizimu Afrika\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sentence: Ngabuye ngahlangana naye wangitshela ukuthi ibhizinisi lakhe selikhulile kungaba njani ngifike ngizobona ukuthi yini engingayenza, kusho uNksz Gwala."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"UNksz Gwala\"],\n  \"ORG\": [],\n  \"LOC\": []\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sentence: Ukhulume nomongameli ePhalamende ePitoli."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [\"Phalamende\"],\n  \"LOC\": [\"ePitoli\"]\n}"
+    }
+  ],
+  "bbj": [
+  {
+    "role": "user",
+    "content": "Sentence: Paul Biya mbɛ United Nations njɔŋ a New York."
+  },
+  {
+    "role": "assistant",
+    "content": "{\n  \"PER\": [\"Paul Biya\"],\n  \"ORG\": [\"United Nations\"],\n  \"LOC\": [\"New York\"]\n}"
+  },
+  {
+    "role": "user",
+    "content": "Sentence: Samuel Eto'o ne Roger Milla ndaŋ Bank of Cameroon a Yaoundé."
+  },
+  {
+    "role": "assistant",
+    "content": "{\n  \"PER\": [\"Samuel Eto'o\", \"Roger Milla\"],\n  \"ORG\": [\"Bank of Cameroon\"],\n  \"LOC\": [\"Yaoundé\"]\n}"
+  },
+  {
+    "role": "user",
+    "content": "Sentence: Ndaŋ njɔŋ Parliament a Bafoussam."
+  },
+  {
+    "role": "assistant",
+    "content": "{\n  \"PER\": [],\n  \"ORG\": [\"Parliament\"],\n  \"LOC\": [\"Bafoussam\"]\n}"
+  }
+],
+"nya": [
+  {
+    "role": "user",
+    "content": "Sentence: Hastings Banda anapita ku United Nations ku New York."
+  },
+  {
+    "role": "assistant",
+    "content": "{\n  \"PER\": [\"Hastings Banda\"],\n  \"ORG\": [\"United Nations\"],\n  \"LOC\": [\"New York\"]\n}"
+  },
+  {
+    "role": "user",
+    "content": "Sentence: Lazarus Chakwera ndi Joyce Banda anakumana ku Bank of Malawi ku Lilongwe."
+  },
+  {
+    "role": "assistant",
+    "content": "{\n  \"PER\": [\"Lazarus Chakwera\", \"Joyce Banda\"],\n  \"ORG\": [\"Bank of Malawi\"],\n  \"LOC\": [\"Lilongwe\"]\n}"
+  },
+  {
+    "role": "user",
+    "content": "Sentence: Anapita ku Parliament ku Blantyre."
+  },
+  {
+    "role": "assistant",
+    "content": "{\n  \"PER\": [],\n  \"ORG\": [\"Parliament\"],\n  \"LOC\": [\"Blantyre\"]\n}"
+  }
+]
+
+}

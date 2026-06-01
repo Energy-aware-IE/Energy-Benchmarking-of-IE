@@ -1,0 +1,10 @@
+{
+  "shot1": {
+    "user": "Document:\nTransportation officials are urging carpool and teleworking as options to combat an expected flood of drivers on the road .\n( Paul Duggan )\n-- A Baltimore prosecutor accused a police detective of \" sabotaging \" investigations related to the death of Freddie Gray , accusing him of fabricating notes to suggest that the state 's medical examiner believed the manner of death was an accident rather than a homicide .\nThe heated exchange came in the chaotic sixth day of the trial of Baltimore Officer Caesar Goodson Jr. , who drove the police van in which Gray suffered a fatal spine injury in 2015 .\n( Derek Hawkins and Lynh Bui )\n\nEvent trigger: \"homicide\"\nEvent type: life.die.deathcausedbyviolentevents\nValid roles: instrument, killer, place, victim\n\nExtract the event arguments as a JSON object.",
+    "assistant": "{\"killer\": \"Officer Caesar Goodson Jr.\", \"victim\": \"Freddie Gray\", \"place\": \"Baltimore\"}"
+  },
+  "shot2": {
+    "user": "Document:\nPeople who had just arrived at the airport in Istanbul after the blasts were pictured running as they tried to flee the scene\nDesperate passengers embrace as they gather in shock outside the terminal after the airport was evacuated and all flights were grounded\nTwelve months after that , he was found in Georgia , in the Lopota mountain valley following a battle between police and rebels which saw three policeman and 11 rebels killed .\nChataev was injured and later detained - but said he had nothing to do with it .\nChataev is also said to have led Chechen Islamist Doku Umarov 's armed underground movement of Northern Caucasus from Turkey - perfectly placing him to plan an attack like Tuesday 's .\n\nEvent trigger: \"battle\"\nEvent type: conflict.attack.selfdirectedbattle\nValid roles: attacker, instrument, place, target\n\nExtract the event arguments as a JSON object.",
+    "assistant": "{\"attacker\": \"police\", \"target\": \"rebels\", \"place\": \"Lopota mountain valley\"}"
+  }
+}

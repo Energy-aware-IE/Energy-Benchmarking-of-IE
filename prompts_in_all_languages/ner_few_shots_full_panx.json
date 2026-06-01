@@ -1,0 +1,1042 @@
+{
+  "af": [
+    {
+      "role": "user",
+      "content": "Nelson Mandela het by die Universiteit van Kaapstad in Kaapstad gepraat."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Nelson Mandela\"\n  ],\n  \"ORG\": [\n    \"Universiteit van Kaapstad\"\n  ],\n  \"LOC\": [\n    \"Kaapstad\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Elon Musk het met Trevor Noah by Tesla in Pretoria vergader."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Elon Musk\",\n    \"Trevor Noah\"\n  ],\n  \"ORG\": [\n    \"Tesla\"\n  ],\n  \"LOC\": [\n    \"Pretoria\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sy het met die president in Johannesburg gesels."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\n    \"Johannesburg\"\n  ]\n}"
+    }
+  ],
+  "de": [
+    {
+      "role": "user",
+      "content": "Angela Merkel sprach bei den Vereinten Nationen in New York."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"Angela Merkel\"],\n  \"ORG\": [\"Vereinten Nationen\"],\n  \"LOC\": [\"New York\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Der Journalist Peter Müller besuchte die Universität Heidelberg und sprach mit der CEO Sabine Keller von Siemens in München."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"Peter Müller\", \"Sabine Keller\"],\n  \"ORG\": [\"Universität Heidelberg\", \"Siemens\"],\n  \"LOC\": [\"München\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sie traf die Kanzlerin in Berlin, aber er erwähnte keine Namen."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\"Berlin\"]\n}"
+    }
+  ],
+  "en": [
+    {
+      "role": "user",
+      "content": " Barack Obama met Tim Cook at Apple in Cupertino."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"Barack Obama\", \"Tim Cook\"],\n  \"ORG\": [\"Apple\"],\n  \"LOC\": [\"Cupertino\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sundar Pichai discussed AI with Satya Nadella at Microsoft headquarters in Redmond."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"Sundar Pichai\", \"Satya Nadella\"],\n  \"ORG\": [\"Microsoft\"],\n  \"LOC\": [\"Redmond\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "She spoke to the president in Washington."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\"Washington\"]\n}"
+    }
+  ],
+  "nl": [
+    {
+      "role": "user",
+      "content": "Mark Rutte sprak bij de Universiteit van Amsterdam in Amsterdam."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Mark Rutte\"\n  ],\n  \"ORG\": [\n    \"Universiteit van Amsterdam\"\n  ],\n  \"LOC\": [\n    \"Amsterdam\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sigrid Kaag ontmoette Frans Timmermans bij de Europese Commissie in Brussel."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Sigrid Kaag\",\n    \"Frans Timmermans\"\n  ],\n  \"ORG\": [\n    \"Europese Commissie\"\n  ],\n  \"LOC\": [\n    \"Brussel\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Hij sprak met de minister in Den Haag."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\n    \"Den Haag\"\n  ]\n}"
+    }
+  ],
+  "es": [
+    {
+      "role": "user",
+      "content": "Pedro Sánchez visitó la Universidad de Barcelona en Barcelona."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Pedro Sánchez\"\n  ],\n  \"ORG\": [\n    \"Universidad de Barcelona\"\n  ],\n  \"LOC\": [\n    \"Barcelona\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Lionel Messi se reunió con Joan Laporta en el FC Barcelona en Barcelona."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Lionel Messi\",\n    \"Joan Laporta\"\n  ],\n  \"ORG\": [\n    \"FC Barcelona\"\n  ],\n  \"LOC\": [\n    \"Barcelona\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Ella habló con el presidente en Madrid."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\n    \"Madrid\"\n  ]\n}"
+    }
+  ],
+  "fr": [
+    {
+      "role": "user",
+      "content": "Emmanuel Macron a visité l'Université de Lyon à Lyon."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Emmanuel Macron\"\n  ],\n  \"ORG\": [\n    \"Université de Lyon\"\n  ],\n  \"LOC\": [\n    \"Lyon\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Kylian Mbappé a rencontré Didier Deschamps au PSG à Paris."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Kylian Mbappé\",\n    \"Didier Deschamps\"\n  ],\n  \"ORG\": [\n    \"PSG\"\n  ],\n  \"LOC\": [\n    \"Paris\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Elle a parlé au président à Marseille."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\n    \"Marseille\"\n  ]\n}"
+    }
+  ],
+  "it": [
+    {
+      "role": "user",
+      "content": "Giorgia Meloni ha visitato l'Università di Roma a Roma."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Giorgia Meloni\"\n  ],\n  \"ORG\": [\n    \"Università di Roma\"\n  ],\n  \"LOC\": [\n    \"Roma\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Leonardo Bonucci ha incontrato Roberto Mancini alla FIGC a Firenze."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Leonardo Bonucci\",\n    \"Roberto Mancini\"\n  ],\n  \"ORG\": [\n    \"FIGC\"\n  ],\n  \"LOC\": [\n    \"Firenze\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Lui ha parlato con il presidente a Milano."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\n    \"Milano\"\n  ]\n}"
+    }
+  ],
+  "pt": [
+    {
+      "role": "user",
+      "content": "Marcelo Rebelo de Sousa visitou a Universidade do Porto no Porto."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Marcelo Rebelo de Sousa\"\n  ],\n  \"ORG\": [\n    \"Universidade do Porto\"\n  ],\n  \"LOC\": [\n    \"Porto\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Cristiano Ronaldo reuniu-se com Fernando Santos na FPF em Lisboa."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Cristiano Ronaldo\",\n    \"Fernando Santos\"\n  ],\n  \"ORG\": [\n    \"FPF\"\n  ],\n  \"LOC\": [\n    \"Lisboa\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Ela falou com o presidente em Coimbra."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\n    \"Coimbra\"\n  ]\n}"
+    }
+  ],
+  "bg": [
+    {
+      "role": "user",
+      "content": "Румен Радев посети Европейската комисия в Брюксел."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"Румен Радев\"],\n  \"ORG\": [\"Европейската комисия\"],\n  \"LOC\": [\"Брюксел\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Илон Мъск обсъди проект с Мария Петрова в Софийски университет в София."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"Илон Мъск\", \"Мария Петрова\"],\n  \"ORG\": [\"Софийски университет\"],\n  \"LOC\": [\"София\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Тя говори с президента в Пловдив."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\"Пловдив\"]\n}"
+    }
+  ],
+  "ru": [
+    {
+      "role": "user",
+      "content": "Владимир Путин посетил Московский государственный университет в Москве."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Владимир Путин\"\n  ],\n  \"ORG\": [\n    \"Московский государственный университет\"\n  ],\n  \"LOC\": [\n    \"Москва\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Сергей Лавров встретился с Антоном Силуановым в МИД России в Москве."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Сергей Лавров\",\n    \"Антон Силуанов\"\n  ],\n  \"ORG\": [\n    \"МИД России\"\n  ],\n  \"LOC\": [\n    \"Москва\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Она говорила с президентом в Санкт-Петербурге."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\n    \"Санкт-Петербург\"\n  ]\n}"
+    }
+  ],
+  "bn": [
+    {
+      "role": "user",
+      "content": "শেখ হাসিনা ঢাকায় ঢাকা বিশ্ববিদ্যালয়ে বক্তৃতা দেন।"
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"শেখ হাসিনা\"\n  ],\n  \"ORG\": [\n    \"ঢাকা বিশ্ববিদ্যালয়\"\n  ],\n  \"LOC\": [\n    \"ঢাকা\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "মাশরাফি বিন মুর্তজা কর্ণফুলী গ্যাসে চট্টগ্রামে বৈঠক করেন।"
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"মাশরাফি বিন মুর্তজা\"\n  ],\n  \"ORG\": [\n    \"কর্ণফুলী গ্যাস\"\n  ],\n  \"LOC\": [\n    \"চট্টগ্রাম\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "তিনি রাজধানীতে মন্ত্রীর সাথে কথা বলেছেন।"
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": []\n}"
+    }
+  ],
+  "hi": [
+    {
+      "role": "user",
+      "content": "नरेंद्र मोदी ने नई दिल्ली में जामिया मिलिया इस्लामिया का दौरा किया।"
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"नरेंद्र मोदी\"\n  ],\n  \"ORG\": [\n    \"जामिया मिलिया इस्लामिया\"\n  ],\n  \"LOC\": [\n    \"नई दिल्ली\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "सचिन तेंदुलकर ने मुंबई में बीसीसीआई मुख्यालय में जय शाह से मुलाकात की।"
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"सचिन तेंदुलकर\",\n    \"जय शाह\"\n  ],\n  \"ORG\": [\n    \"बीसीसीआई\"\n  ],\n  \"LOC\": [\n    \"मुंबई\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "उसने राजधानी में राष्ट्रपति से बात की।"
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": []\n}"
+    }
+  ],
+  "mr": [
+    {
+      "role": "user",
+      "content": "उद्धव ठाकरे यांनी मुंबईतील मुंबई विद्यापीठाला भेट दिली."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"उद्धव ठाकरे\"\n  ],\n  \"ORG\": [\n    \"मुंबई विद्यापीठ\"\n  ],\n  \"LOC\": [\n    \"मुंबई\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "लता मंगेशकर यांनी पुण्यात भारत सरकारच्या सांस्कृतिक मंत्रालयात बैठकीत हजेरी लावली."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"लता मंगेशकर\"\n  ],\n  \"ORG\": [\n    \"सांस्कृतिक मंत्रालय\"\n  ],\n  \"LOC\": [\n    \"पुणे\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "तीने शहरात मुख्यमंत्र्यांशी बोलले."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": []\n}"
+    }
+  ],
+  "ur": [
+    {
+      "role": "user",
+      "content": "عمران خان نے لاہور میں پنجاب یونیورسٹی کا دورہ کیا۔"
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"عمران خان\"\n  ],\n  \"ORG\": [\n    \"پنجاب یونیورسٹی\"\n  ],\n  \"LOC\": [\n    \"لاہور\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "وسیم اکرم نے کراچی میں پی سی بی ہیڈکوارٹرز میں رمیز راجہ سے ملاقات کی۔"
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"وسیم اکرم\",\n    \"رمیز راجہ\"\n  ],\n  \"ORG\": [\n    \"پی سی بی\"\n  ],\n  \"LOC\": [\n    \"کراچی\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "اس نے صدر سے اسلام آباد میں بات کی۔"
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\n    \"اسلام آباد\"\n  ]\n}"
+    }
+  ],
+  "fa": [
+    {
+      "role": "user",
+      "content": "حسن روحانی در تهران از دانشگاه تهران بازدید کرد."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"حسن روحانی\"\n  ],\n  \"ORG\": [\n    \"دانشگاه تهران\"\n  ],\n  \"LOC\": [\n    \"تهران\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "علی دایی در شرکت سایپا در کرج با مهدی تاج دیدار کرد."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"علی دایی\",\n    \"مهدی تاج\"\n  ],\n  \"ORG\": [\n    \"شرکت سایپا\"\n  ],\n  \"LOC\": [\n    \"کرج\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "او با رئیس‌جمهور در اصفهان صحبت کرد."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\n    \"اصفهان\"\n  ]\n}"
+    }
+  ],
+  "el": [
+    {
+      "role": "user",
+      "content": "Κυριάκος Μητσοτάκης επισκέφθηκε το Πανεπιστήμιο Αθηνών στην Αθήνα."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Κυριάκος Μητσοτάκης\"\n  ],\n  \"ORG\": [\n    \"Πανεπιστήμιο Αθηνών\"\n  ],\n  \"LOC\": [\n    \"Αθήνα\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Γιάννης Αντετοκούνμπο συναντήθηκε με Σωτήρη Τσιόδρα στο Υπουργείο Υγείας στην Αθήνα."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Γιάννης Αντετοκούνμπο\",\n    \"Σωτήρης Τσιόδρας\"\n  ],\n  \"ORG\": [\n    \"Υπουργείο Υγείας\"\n  ],\n  \"LOC\": [\n    \"Αθήνα\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Μίλησε με τον πρόεδρο στη Θεσσαλονίκη."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\n    \"Θεσσαλονίκη\"\n  ]\n}"
+    }
+  ],
+  "zh": [
+    {
+      "role": "user",
+      "content": "习近平在北京会见了联合国秘书长安东尼奥·古特雷斯。"
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"习近平\", \"安东尼奥·古特雷斯\"],\n  \"ORG\": [\"联合国\"],\n  \"LOC\": [\"北京\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "马云在上海与李强在阿里巴巴总部会面。"
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"马云\", \"李强\"],\n  \"ORG\": [\"阿里巴巴\"],\n  \"LOC\": [\"上海\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "他在北京见到了校长，但没有说出名字。"
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\"北京\"]\n}"
+    }
+  ],
+  "my": [
+    {
+      "role": "user",
+      "content": "အောင်ဆန်းစုကြည်သည် ရန်ကုန်ရှိ ရန်ကုန်တက္ကသိုလ် တက်ရောက်ခဲ့သည်။"
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"အောင်ဆန်းစုကြည်\"\n  ],\n  \"ORG\": [\n    \"ရန်ကုန်တက္ကသိုလ်\"\n  ],\n  \"LOC\": [\n    \"ရန်ကုန်\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "မြင့်သန့်ကနေ စတား သင်္ကန်းဘုန်းကြီးကျောင်းမှာ ကိုကိုကြီးနဲ့ တွေ့ဆုံခဲ့သည်။"
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"မြင့်သန့်\",\n    \"ကိုကိုကြီး\"\n  ],\n  \"ORG\": [\n    \"သင်္ကန်းဘုန်းကြီးကျောင်း\"\n  ],\n  \"LOC\": []\n}"
+    },
+    {
+      "role": "user",
+      "content": "သူက မြန်မာနိုင်ငံ၏ သမ္မတနှင့် နေပြည်တော်တွင် ဆက်သွယ်ခဲ့သည်။"
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\n    \"နေပြည်တော်\"\n  ]\n}"
+    }
+  ],
+  "ar": [
+    {
+      "role": "user",
+      "content": "زار محمد صلاح نادي ليفربول في لندن."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"محمد صلاح\"],\n  \"ORG\": [\"نادي ليفربول\"],\n  \"LOC\": [\"لندن\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "التقى أحمد علي مع إيلون ماسك في شركة تسلا بمدينة سان فرانسيسكو."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"أحمد علي\", \"إيلون ماسك\"],\n  \"ORG\": [\"شركة تسلا\"],\n  \"LOC\": [\"سان فرانسيسكو\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "هو زار الرئيس في القاهرة."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\"القاهرة\"]\n}"
+    }
+  ],
+  "he": [
+    {
+      "role": "user",
+      "content": "בנימין נתניהו ביקר באוניברסיטת תל אביב בתל אביב."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"בנימין נתניהו\"\n  ],\n  \"ORG\": [\n    \"אוניברסיטת תל אביב\"\n  ],\n  \"LOC\": [\n    \"תל אביב\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "גל גדות נפגשה עם אריה דרעי במשרד הפנים בירושלים."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"גל גדות\",\n    \"אריה דרעי\"\n  ],\n  \"ORG\": [\n    \"משרד הפנים\"\n  ],\n  \"LOC\": [\n    \"ירושלים\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "היא דיברה עם הנשיא בחיפה."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\n    \"חיפה\"\n  ]\n}"
+    }
+  ],
+  "ja": [
+    {
+      "role": "user",
+      "content": "岸田文雄は東京で東京大学を訪問した。"
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"岸田文雄\"\n  ],\n  \"ORG\": [\n    \"東京大学\"\n  ],\n  \"LOC\": [\n    \"東京\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "孫正義はソフトバンク本社で安倍晋三と会った。"
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"孫正義\",\n    \"安倍晋三\"\n  ],\n  \"ORG\": [\n    \"ソフトバンク\"\n  ],\n  \"LOC\": [\n    \"東京\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "彼女は首相と大阪で話した。"
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\n    \"大阪\"\n  ]\n}"
+    }
+  ],
+  "ko": [
+    {
+      "role": "user",
+      "content": "윤석열은 서울에서 서울대학교를 방문했다."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"윤석열\"\n  ],\n  \"ORG\": [\n    \"서울대학교\"\n  ],\n  \"LOC\": [\n    \"서울\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "문재인은 삼성 본사에서 이재용과 만났다."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"문재인\",\n    \"이재용\"\n  ],\n  \"ORG\": [\n    \"삼성\"\n  ],\n  \"LOC\": [\n    \"서울\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "그녀는 대통령과 부산에서 이야기했다."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\n    \"부산\"\n  ]\n}"
+    }
+  ],
+  "kk": [
+    {
+      "role": "user",
+      "content": "Қасым-Жомарт Тоқаев Астанада Л.Н. Гумилёв атындағы ЕҰУ-ге барды."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Қасым-Жомарт Тоқаев\"\n  ],\n  \"ORG\": [\n    \"Л.Н. Гумилёв атындағы ЕҰУ\"\n  ],\n  \"LOC\": [\n    \"Астана\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Димаш Құдайберген Нұр-Сұлтанда Air Astana кеңсесінде кездесті."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Димаш Құдайберген\"\n  ],\n  \"ORG\": [\n    \"Air Astana\"\n  ],\n  \"LOC\": [\n    \"Нұр-Сұлтан\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Ол президентпен Алматыда сөйлесті."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\n    \"Алматы\"\n  ]\n}"
+    }
+  ],
+  "tr": [
+    {
+      "role": "user",
+      "content": "Recep Tayyip Erdoğan, İstanbul'da Boğaziçi Üniversitesi'ni ziyaret etti."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Recep Tayyip Erdoğan\"\n  ],\n  \"ORG\": [\n    \"Boğaziçi Üniversitesi\"\n  ],\n  \"LOC\": [\n    \"İstanbul\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Aziz Sancar, Ankara'da TÜBİTAK'ta İsmail Demir ile görüştü."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Aziz Sancar\",\n    \"İsmail Demir\"\n  ],\n  \"ORG\": [\n    \"TÜBİTAK\"\n  ],\n  \"LOC\": [\n    \"Ankara\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "O, cumhurbaşkanıyla İzmir'de konuştu."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\n    \"İzmir\"\n  ]\n}"
+    }
+  ],
+  "et": [
+    {
+      "role": "user",
+      "content": "Kaja Kallas külastas Tartu Ülikooli Tartus."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Kaja Kallas\"\n  ],\n  \"ORG\": [\n    \"Tartu Ülikool\"\n  ],\n  \"LOC\": [\n    \"Tartu\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Kristjan Järvan kohtus Kersti Kaljulaidiga Riigikogus Tallinnas."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Kristjan Järvan\",\n    \"Kersti Kaljulaid\"\n  ],\n  \"ORG\": [\n    \"Riigikogu\"\n  ],\n  \"LOC\": [\n    \"Tallinn\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Ta rääkis presidendiga Narvas."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\n    \"Narva\"\n  ]\n}"
+    }
+  ],
+  "fi": [
+    {
+      "role": "user",
+      "content": "Sanna Marin vieraili Helsingin yliopistossa Helsingissä."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Sanna Marin\"\n  ],\n  \"ORG\": [\n    \"Helsingin yliopisto\"\n  ],\n  \"LOC\": [\n    \"Helsinki\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Linus Torvalds tapasi Pekka Lundmarkin Nokian pääkonttorissa Espoossa."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Linus Torvalds\",\n    \"Pekka Lundmark\"\n  ],\n  \"ORG\": [\n    \"Nokia\"\n  ],\n  \"LOC\": [\n    \"Espoo\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Hän puhui presidentin kanssa Turussa."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\n    \"Turku\"\n  ]\n}"
+    }
+  ],
+  "hu": [
+    {
+      "role": "user",
+      "content": "Orbán Viktor meglátogatta az Eötvös Loránd Egyetemet Budapesten."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Orbán Viktor\"\n  ],\n  \"ORG\": [\n    \"Eötvös Loránd Egyetem\"\n  ],\n  \"LOC\": [\n    \"Budapest\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Szijjártó Péter találkozott Dzsudzsák Balázzsal a MOL-nál Székesfehérváron."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Szijjártó Péter\",\n    \"Dzsudzsák Balázs\"\n  ],\n  \"ORG\": [\n    \"MOL\"\n  ],\n  \"LOC\": [\n    \"Székesfehérvár\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Ő beszélt az elnökkel Debrecenben."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\n    \"Debrecen\"\n  ]\n}"
+    }
+  ],
+  "id": [
+    {
+      "role": "user",
+      "content": "Joko Widodo mengunjungi Universitas Indonesia di Depok."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Joko Widodo\"\n  ],\n  \"ORG\": [\n    \"Universitas Indonesia\"\n  ],\n  \"LOC\": [\n    \"Depok\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Nadiem Makarim bertemu dengan William Tanuwijaya di Tokopedia di Jakarta."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Nadiem Makarim\",\n    \"William Tanuwijaya\"\n  ],\n  \"ORG\": [\n    \"Tokopedia\"\n  ],\n  \"LOC\": [\n    \"Jakarta\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Ia berbicara dengan presiden di Surabaya."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\n    \"Surabaya\"\n  ]\n}"
+    }
+  ],
+  "jv": [
+    {
+      "role": "user",
+      "content": "Ganjar Pranowo ngunjungi Universitas Gadjah Mada ing Yogyakarta."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Ganjar Pranowo\"\n  ],\n  \"ORG\": [\n    \"Universitas Gadjah Mada\"\n  ],\n  \"LOC\": [\n    \"Yogyakarta\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sri Sultan HB X ketemu karo Anies Baswedan ing Kraton Yogyakarta."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Sri Sultan HB X\",\n    \"Anies Baswedan\"\n  ],\n  \"ORG\": [\n    \"Kraton Yogyakarta\"\n  ],\n  \"LOC\": [\n    \"Yogyakarta\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Dheweke ngomong karo presiden ing Solo."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\n    \"Solo\"\n  ]\n}"
+    }
+  ],
+  "ms": [
+    {
+      "role": "user",
+      "content": "Anwar Ibrahim melawat Universiti Malaya di Kuala Lumpur."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Anwar Ibrahim\"\n  ],\n  \"ORG\": [\n    \"Universiti Malaya\"\n  ],\n  \"LOC\": [\n    \"Kuala Lumpur\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Lee Chong Wei bertemu Khairy Jamaluddin di Petronas di Putrajaya."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Lee Chong Wei\",\n    \"Khairy Jamaluddin\"\n  ],\n  \"ORG\": [\n    \"Petronas\"\n  ],\n  \"LOC\": [\n    \"Putrajaya\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Dia bercakap dengan presiden di George Town."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\n    \"George Town\"\n  ]\n}"
+    }
+  ],
+  "tl": [
+    {
+      "role": "user",
+      "content": "Leni Robredo ay bumisita sa Unibersidad ng Pilipinas sa Quezon City."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Leni Robredo\"\n  ],\n  \"ORG\": [\n    \"Unibersidad ng Pilipinas\"\n  ],\n  \"LOC\": [\n    \"Quezon City\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Manny Pacquiao ay nakipagkita kay Bongbong Marcos sa Malacañang sa Maynila."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Manny Pacquiao\",\n    \"Bongbong Marcos\"\n  ],\n  \"ORG\": [\n    \"Malacañang\"\n  ],\n  \"LOC\": [\n    \"Maynila\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Siya ay nakipag-usap sa pangulo sa Cebu."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\n    \"Cebu\"\n  ]\n}"
+    }
+  ],
+  "ml": [
+    {
+      "role": "user",
+      "content": "പി. വിജയൻ തിരുവനന്തപുരം സർവകലാശാല സന്ദർശിച്ചു."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"പി. വിജയൻ\"\n  ],\n  \"ORG\": [\n    \"തിരുവനന്തപുരം സർവകലാശാല\"\n  ],\n  \"LOC\": [\n    \"തിരുവനന്തപുരം\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "എ.ആർ. റഹ്മാൻ കൊച്ചിയിലെ ഐഐഎം-ൽ മന്ത്രിയുമായി ملاകല്‍ ചെയ്തു."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"എ.ആർ. റഹ്മാൻ\"\n  ],\n  \"ORG\": [\n    \"ഐഐഎം\"\n  ],\n  \"LOC\": [\n    \"കൊച്ചി\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "അവൾ രാഷ്ട്രപതിയുമായി കോഴിക്കോട് സംസാരിച്ചു."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\n    \"കോഴിക്കോട്\"\n  ]\n}"
+    }
+  ],
+  "ta": [
+    {
+      "role": "user",
+      "content": "மு.க.ஸ்டாலின் சென்னை பல்கலைக்கழகம் சென்னையில் பார்வையிட்டார்."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"மு.க.ஸ்டாலின்\"\n  ],\n  \"ORG\": [\n    \"சென்னை பல்கலைக்கழகம்\"\n  ],\n  \"LOC\": [\n    \"சென்னை\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "ரஜினிகாந்த் ஐஐடி மத்ராஸ் வளாகத்தில் பொன் ராதாகிருஷ்ணனுடன் சந்தித்தார்."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"ரஜினிகாந்த்\",\n    \"பொன் ராதாகிருஷ்ணன்\"\n  ],\n  \"ORG\": [\n    \"ஐஐடி மத்ராஸ்\"\n  ],\n  \"LOC\": [\n    \"சென்னை\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "அவர் ஜனாதிபதியுடன் கோயம்புத்தூரில் பேசினார்."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\n    \"கோயம்புத்தூர்\"\n  ]\n}"
+    }
+  ],
+  "te": [
+    {
+      "role": "user",
+      "content": "చంద్రబాబు నాయుడు హైదరాబాద్‌లో ఓస్మానియా విశ్వవిద్యాలయాన్ని సందర్శించారు."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"చంద్రబాబు నాయుడు\"\n  ],\n  \"ORG\": [\n    \"ఓస్మానియా విశ్వవిద్యాలయం\"\n  ],\n  \"LOC\": [\n    \"హైదరాబాద్\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "పీవీ సింధు గచ్చిబౌలిలో గోపీచంద్ అకాడమీలో కిరణ్ కుమార్ రెడ్డిని కలిసింది."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"పీవీ సింధు\",\n    \"కిరణ్ కుమార్ రెడ్డి\"\n  ],\n  \"ORG\": [\n    \"గోపీచంద్ అకాడమీ\"\n  ],\n  \"LOC\": [\n    \"హైదరాబాద్\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "ఆమె రాష్ట్రపతితో విజయవాడలో మాట్లాడింది."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\n    \"విజయవాడ\"\n  ]\n}"
+    }
+  ],
+  "sw": [
+    {
+      "role": "user",
+      "content": "Samia Suluhu alitembelea Chuo Kikuu cha Dar es Salaam jijini Dar es Salaam."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Samia Suluhu\"\n  ],\n  \"ORG\": [\n    \"Chuo Kikuu cha Dar es Salaam\"\n  ],\n  \"LOC\": [\n    \"Dar es Salaam\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Eliud Kipchoge alikutana na Uhuru Kenyatta katika Ikulu ya Nairobi."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Eliud Kipchoge\",\n    \"Uhuru Kenyatta\"\n  ],\n  \"ORG\": [\n    \"Ikulu ya Nairobi\"\n  ],\n  \"LOC\": [\n    \"Nairobi\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Alizungumza na rais mjini Arusha."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\n    \"Arusha\"\n  ]\n}"
+    }
+  ],
+  "yo": [
+    {
+      "role": "user",
+      "content": "Wọlé Ṣóyínká ṣàbẹwò sí Yunifásítì Ìbàdàn ní Ìbàdàn."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Wọlé Ṣóyínká\"\n  ],\n  \"ORG\": [\n    \"Yunifásítì Ìbàdàn\"\n  ],\n  \"LOC\": [\n    \"Ìbàdàn\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Ngozi Okonjo-Iweala pàdé Pásítọ̀ Adeboye ní Ilé Ijọba ní Lagos."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Ngozi Okonjo-Iweala\",\n    \"Pásítọ̀ Adeboye\"\n  ],\n  \"ORG\": [\n    \"Ilé Ijọba\"\n  ],\n  \"LOC\": [\n    \"Lagos\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Ó bá Aare sọ̀rọ̀ ní Abuja."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\n    \"Abuja\"\n  ]\n}"
+    }
+  ],
+  "ka": [
+    {
+      "role": "user",
+      "content": "სალომე ზურაბიშვილი სტუმრობდა თბილისის სახელმწიფო უნივერსიტეტს თბილისში."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"სალომე ზურაბიშვილი\"\n  ],\n  \"ORG\": [\n    \"თბილისის სახელმწიფო უნივერსიტეტი\"\n  ],\n  \"LOC\": [\n    \"თბილისი\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "ლევან კობიაშვილი შეხვდა კახა კალაძეს თბილისის მერიის შენობაში."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"ლევან კობიაშვილი\",\n    \"კახა კალაძე\"\n  ],\n  \"ORG\": [\n    \"თბილისის მერია\"\n  ],\n  \"LOC\": [\n    \"თბილისი\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "მან პრეზიდენტთან ბათუმში ისაუბრა."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\n    \"ბათუმი\"\n  ]\n}"
+    }
+  ],
+  "th": [
+    {
+      "role": "user",
+      "content": "ประยุทธ์ จันทร์โอชา เยี่ยมชมมหาวิทยาลัยจุฬาลงกรณ์ที่กรุงเทพฯ."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"ประยุทธ์ จันทร์โอชา\"\n  ],\n  \"ORG\": [\n    \"มหาวิทยาลัยจุฬาลงกรณ์\"\n  ],\n  \"LOC\": [\n    \"กรุงเทพฯ\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "ธนาธร จึงรุ่งเรืองกิจ พบกับ ชัชชาติ สิทธิพันธุ์ ที่ศาลาว่าการกรุงเทพมหานคร."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"ธนาธร จึงรุ่งเรืองกิจ\",\n    \"ชัชชาติ สิทธิพันธุ์\"\n  ],\n  \"ORG\": [\n    \"ศาลาว่าการกรุงเทพมหานคร\"\n  ],\n  \"LOC\": [\n    \"กรุงเทพฯ\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "เธอคุยกับประธานาธิบดีที่เชียงใหม่."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\n    \"เชียงใหม่\"\n  ]\n}"
+    }
+  ],
+  "vi": [
+    {
+      "role": "user",
+      "content": "Nguyễn Phú Trọng đã thăm Đại học Quốc gia Hà Nội ở Hà Nội."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Nguyễn Phú Trọng\"\n  ],\n  \"ORG\": [\n    \"Đại học Quốc gia Hà Nội\"\n  ],\n  \"LOC\": [\n    \"Hà Nội\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sơn Tùng M-TP gặp Phạm Nhật Vượng tại Vingroup ở Hải Phòng."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Sơn Tùng M-TP\",\n    \"Phạm Nhật Vượng\"\n  ],\n  \"ORG\": [\n    \"Vingroup\"\n  ],\n  \"LOC\": [\n    \"Hải Phòng\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Cô ấy nói chuyện với tổng thống ở Đà Nẵng."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\n    \"Đà Nẵng\"\n  ]\n}"
+    }
+  ],
+  "eu": [
+    {
+      "role": "user",
+      "content": "Iñigo Urkullu Bilboko Unibertsitatean egon zen Bilbon."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Iñigo Urkullu\"\n  ],\n  \"ORG\": [\n    \"Bilboko Unibertsitatea\"\n  ],\n  \"LOC\": [\n    \"Bilbo\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Aitor Elizegi elkartu zen Julen Guerrero-rekin Athletic Club-en Bilbon."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\n    \"Aitor Elizegi\",\n    \"Julen Guerrero\"\n  ],\n  \"ORG\": [\n    \"Athletic Club\"\n  ],\n  \"LOC\": [\n    \"Bilbo\"\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Berak presidentearenekin Donostian hitz egin zuen."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\n    \"Donostia\"\n  ]\n}"
+    }
+  ]
+}

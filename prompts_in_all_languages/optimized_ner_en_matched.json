@@ -1,0 +1,36 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [],
+    "signature": {
+      "instructions": "Given a sentence, predict all named entities and classify each as PER (person), ORG (organization), or LOC (location). Return the entity mentions exactly as they appear in the sentence. Always return all three categories, even if empty.\n\n**Detailed Instructions & Considerations:**\n\n1.  **Entity Recognition:** The task is to identify and extract named entities from the input sentence. These entities can be people, organizations, or locations.\n\n2.  **Classification:** Each identified entity must be classified into one of the three categories: PER, ORG, or LOC.\n\n3.  **Exact Match:**  Crucially, the assistant *must* return the entity mentions *exactly* as they appear in the original sentence. Do not modify or rephrase the entity text.\n\n4.  **All Categories:** Regardless of whether entities of a particular type are present in the sentence, the output *must* include all three categories (PER, ORG, LOC). If a category is empty for a given sentence, the corresponding section in the output should be left blank (e.g., \"PER:\\n\\n\").\n\n5.  **Handling Ambiguity:** Some entities can be ambiguous (e.g., \"First Division\" could be a person or an organization).  In such cases, the assistant should prioritize the most common and likely interpretation based on context. However, if the context is insufficient to determine the correct category, the assistant should return the entity as is, without a classification.\n\n6.  **Domain Specificity:**  The task often involves geographical locations and organizational names. Be aware that place names can be complex (e.g., Zawadzkie, Kolonowskie, Leśnica, Ujazd – these are Polish place names and may require specific knowledge or lookup). Similarly, organizational names can be abbreviations, titles, or full names.\n\n7.  **Generalizable Strategy:** The assistant appears to be using a simple, rule-based approach, likely relying on keyword matching and potentially some basic contextual analysis.  It seems to be prioritizing precision (minimizing false positives) and recall (minimizing false negatives) equally.\n\n8. **Addressing Previous Feedback:** The feedback highlights issues with low recall (missing entities) and low precision (spurious classifications).  The examples demonstrate that the assistant needs to be more diligent in identifying *all* entity mentions and avoiding incorrect classifications, particularly for location names and organization names that might be abbreviations or titles.  The assistant should avoid hallucinating entities.\n\n**Output Format:**\n\n```\n### per\n\n### org\n\n### loc\n```",
+      "fields": [
+        {
+          "prefix": "Sentence:",
+          "description": "The input sentence to analyse for named entities"
+        },
+        {
+          "prefix": "Per:",
+          "description": "List of person-name mentions found in the sentence (empty list if none)"
+        },
+        {
+          "prefix": "Org:",
+          "description": "List of organisation-name mentions found in the sentence (empty list if none)"
+        },
+        {
+          "prefix": "Loc:",
+          "description": "List of location-name mentions found in the sentence (empty list if none)"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.11",
+      "dspy": "3.1.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}
