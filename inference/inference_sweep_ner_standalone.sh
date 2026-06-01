@@ -30,6 +30,10 @@ cooldown_seconds=10
 # Split comma-separated prompt styles into array (e.g. "1,2,3,4,5,6,7,8,9")
 IFS=',' read -ra prompt_styles <<< "${SWEEP_PROMPT_STYLES}"
 
+# Resolve repository root from this script location so evaluation paths stay portable.
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT_LOCAL="$(cd "${SCRIPT_DIR}/.." && pwd)"
+
 # DSPy program paths (same as inference_gemma_multi_prompt_standalone.sh)
 DSPY_PROGRAM_FILE="${HOST_BASE}/prompts_in_all_languages/optimized_ner_en.json"
 DSPY_PROGRAM_FILE_MATCHED="${HOST_BASE}/prompts_in_all_languages/optimized_ner_en_matched.json"
@@ -48,45 +52,14 @@ DSPY_PROGRAM_FILE_MATCHED="${HOST_BASE}/prompts_in_all_languages/optimized_ner_e
 #   xml__xml_xgrammar                    → lang_eval_mlflow_mi_gol_all9_semaphore_guided.py  --decoding-mode guided_xml
 #   dst__false | xml__false | yaml__false → lang_eval_mlflow_mi_gol_all9_semaphore_other_formats.py  --output-format <file_type>
 
-EVAL_SCRIPT_BASE="evaluation_scripts/xtreme"
+EVAL_PY="${REPO_ROOT_LOCAL}/evaluation/xtreme/lang_eval_ner_sweep.py"
 FORMAT_EXTRA_ARG=""
 
 case "${SWEEP_FORMAT_MODE:-json__false}" in
-    json__false)
-        EVAL_PY="${EVAL_SCRIPT_BASE}/lang_eval_mlflow_mi_gol_all9_semaphore.py"
-        ;;
-    json__json_xgrammar)
-        EVAL_PY="${EVAL_SCRIPT_BASE}/lang_eval_mlflow_mi_gol_all9_semaphore_guided.py"
-        FORMAT_EXTRA_ARG="--decoding-mode guided_json"
-        ;;
-    dst__dst_ebnf|dst__dst_outlines)
-        EVAL_PY="${EVAL_SCRIPT_BASE}/lang_eval_mlflow_mi_gol_all9_semaphore_guided.py"
-        # dst_ebnf → xgrammar EBNF grammar; dst_outlines → outlines regex constraint
-        if [[ "${SWEEP_FORMAT_MODE}" == "dst__dst_outlines" ]]; then
-            FORMAT_EXTRA_ARG="--decoding-mode guided_dst_outlines"
-        else
-            FORMAT_EXTRA_ARG="--decoding-mode guided_dst"
-        fi
-        ;;
-    xml__xml_xgrammar)
-        EVAL_PY="${EVAL_SCRIPT_BASE}/lang_eval_mlflow_mi_gol_all9_semaphore_guided.py"
-        FORMAT_EXTRA_ARG="--decoding-mode guided_xml"
-        ;;
-    dst__false)
-        EVAL_PY="${EVAL_SCRIPT_BASE}/lang_eval_mlflow_mi_gol_all9_semaphore_other_formats.py"
-        FORMAT_EXTRA_ARG="--output-format dst"
-        ;;
-    xml__false)
-        EVAL_PY="${EVAL_SCRIPT_BASE}/lang_eval_mlflow_mi_gol_all9_semaphore_other_formats.py"
-        FORMAT_EXTRA_ARG="--output-format xml"
-        ;;
-    yaml__false)
-        EVAL_PY="${EVAL_SCRIPT_BASE}/lang_eval_mlflow_mi_gol_all9_semaphore_other_formats.py"
-        FORMAT_EXTRA_ARG="--output-format yaml"
+    json__false|json__json_xgrammar|dst__false|dst__dst_ebnf|dst__dst_outlines|xml__false|xml__xml_xgrammar|yaml__false)
         ;;
     *)
-        echo "[WARN] Unknown SWEEP_FORMAT_MODE '${SWEEP_FORMAT_MODE}', defaulting to standard JSON eval."
-        EVAL_PY="${EVAL_SCRIPT_BASE}/lang_eval_mlflow_mi_gol_all9_semaphore.py"
+        echo "[WARN] Unknown SWEEP_FORMAT_MODE '${SWEEP_FORMAT_MODE}', continuing with default evaluator."
         ;;
 esac
 

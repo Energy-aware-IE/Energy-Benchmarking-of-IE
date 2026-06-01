@@ -30,6 +30,10 @@ cooldown_seconds=10
 # Split comma-separated prompt styles into array (e.g. "1,2,3,4,5,6,7,8")
 IFS=',' read -ra prompt_styles <<< "${SWEEP_PROMPT_STYLES}"
 
+# Resolve repository root from this script location so evaluation paths stay portable.
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT_LOCAL="$(cd "${SCRIPT_DIR}/.." && pwd)"
+
 # =============================================================================
 # ── Select Python evaluation script based on format_mode ─────────────────────
 # =============================================================================
@@ -39,28 +43,14 @@ IFS=',' read -ra prompt_styles <<< "${SWEEP_PROMPT_STYLES}"
 #   yaml__false          → YAML output (other_formats script)
 #   dst__false           → DST pipe-separated output (other_formats script)
 
-EVAL_SCRIPT_BASE="evaluation_scripts/re"
+EVAL_PY="${REPO_ROOT_LOCAL}/evaluation/re/lang_eval_re_sweep.py"
 FORMAT_EXTRA_ARG=""
 
 case "${SWEEP_FORMAT_MODE:-json__false}" in
-    json__false)
-        EVAL_PY="${EVAL_SCRIPT_BASE}/re_lang_eval_mlflow_mi_gol_all9_semaphore.py"
-        ;;
-    json__json_xgrammar)
-        EVAL_PY="${EVAL_SCRIPT_BASE}/re_lang_eval_mlflow_mi_gol_all9_semaphore_guided.py"
-        FORMAT_EXTRA_ARG="--decoding-mode guided_json"
-        ;;
-    yaml__false)
-        EVAL_PY="${EVAL_SCRIPT_BASE}/re_lang_eval_mlflow_mi_gol_all9_semaphore_other_formats.py"
-        FORMAT_EXTRA_ARG="--output-format yaml"
-        ;;
-    dst__false)
-        EVAL_PY="${EVAL_SCRIPT_BASE}/re_lang_eval_mlflow_mi_gol_all9_semaphore_other_formats.py"
-        FORMAT_EXTRA_ARG="--output-format dst"
+    json__false|json__json_xgrammar|yaml__false|dst__false)
         ;;
     *)
-        echo "[WARN] Unknown SWEEP_FORMAT_MODE '${SWEEP_FORMAT_MODE}', defaulting to standard JSON eval."
-        EVAL_PY="${EVAL_SCRIPT_BASE}/re_lang_eval_mlflow_mi_gol_all9_semaphore.py"
+        echo "[WARN] Unknown SWEEP_FORMAT_MODE '${SWEEP_FORMAT_MODE}', continuing with default evaluator."
         ;;
 esac
 

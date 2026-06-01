@@ -63,9 +63,15 @@ Energy-Benchmarking-of-IE/
 │   ├── inference_sweep_ee_standalone.sh
 │   ├── inference_sweep_re_standalone.sh
 │   └── inference_sweep_masakha_standalone.sh
+├── prompts_in_all_languages/       # Prompt templates and few-shot examples
+│   ├── *_system_prompt.json            # Per-language/system prompts
+│   ├── ner_few_shots_*.json            # NER few-shot exemplars
+│   ├── ee_*.json / re_*.json           # EE/RE prompt resources
+│   └── gollie_prompts.py               # GoLLIE-style prompt helpers
 ├── evaluation/                     # Python evaluation scripts
 │   ├── xtreme/
 │   │   ├── lang_eval_ner_sweep.py      # NER evaluation + MLflow logging
+│   │   ├── dspy_ner.py                 # DSPy-based NER helper
 │   │   └── utils.py                    # Shared utilities (prompts, parsing, telemetry)
 │   ├── masakha/
 │   │   └── lang_eval_masakha_sweep.py
@@ -75,11 +81,7 @@ Energy-Benchmarking-of-IE/
 │       └── lang_eval_re_sweep.py
 ├── monitoring/                     # Energy & GPU monitoring
 │   ├── collect_gpu_nvml.py             # NVML-based GPU metrics collector (10 Hz)
-│   ├── prometheus.yml                  # Prometheus scrape config
-│   └── grafana/                        # Grafana dashboard provisioning
-│       └── provisioning/
-│           ├── dashboards/
-│           └── datasources/
+│   └── prometheus.yml                  # Prometheus scrape config
 ├── docker/                         # Container definitions
 │   ├── inference/Dockerfile            # Training/fine-tuning container
 │   └── vllm_serve_otel/Dockerfile      # vLLM serving container with OpenTelemetry
@@ -159,6 +161,52 @@ MLFLOW_EXPERIMENT_NAME=energy_ner_sweep
 ENERGY_URL=http://<node-hostname>:9400/metrics   # Prometheus DCGM endpoint
 ```
 
+### Required external services
+
+This repository expects the following external services/components to be
+available before running sweeps:
+
+- **SLURM**: schedules and executes all sweep jobs (`sbatch`, `srun`).
+- **MLflow tracking server**: receives experiment runs, parameters, and metrics.
+- **Prometheus + DCGM exporter**: exposes GPU telemetry and power/energy metrics
+   used by the evaluation scripts.
+
+At runtime, ensure these service endpoints are reachable from compute nodes
+via environment variables (for example `MLFLOW_TRACKING_URI` and `ENERGY_URL`).
+
+### Additional software for container workflow
+
+If you build/run the provided Docker images, ensure the following software is
+installed on the host environment:
+
+- **Docker Engine** (or compatible OCI runtime) for building images from
+   `docker/`.
+- **NVIDIA GPU driver + CUDA-compatible runtime** on host nodes.
+- **NVIDIA Container Toolkit** (for GPU access inside Docker containers).
+- **Singularity/Apptainer** if your cluster executes containers as `.sif`
+   images.
+
+Optional (only if telemetry export is enabled in the serving container):
+
+- **OpenTelemetry Collector or Jaeger OTLP endpoint** reachable from serving
+   jobs.
+
+### What is included in the provided Docker images
+
+The repository ships two container definitions under `docker/`, each with a
+different purpose:
+
+- **`docker/vllm_serve_otel/Dockerfile`** (serving image):
+   CUDA base image, Python 3.10 toolchain, `vllm`, `transformers`,
+   `bitsandbytes`, and OpenTelemetry instrumentation packages for trace export.
+- **`docker/inference/Dockerfile`** (training/inference utilities image):
+   CUDA base image with Python virtual environment plus core ML/evaluation
+   packages such as `torch`, `transformers`, `datasets`, `peft`, `trl`,
+   `mlflow`, `seqeval`, `numpy`, `requests`, and related utilities.
+
+In short, the Docker definitions provide the CUDA + Python runtime and most
+ML/evaluation dependencies required by this workflow.
+
 ### Build the vLLM serving container
 
 ```bash
@@ -200,7 +248,8 @@ combination. Results are logged to MLflow automatically.
 
 `results/results.csv` contains the aggregated experimental results for all
 completed tasks. Each row is one (task, model, language, format_mode,
-prompt_style) observation.
+prompt_style) configuration, where metrics are already averaged over 3
+independent runs (N = 3) of that same configuration.
 
 | Column | Description |
 |---|---|
@@ -209,8 +258,8 @@ prompt_style) observation.
 | `language` | ISO code (NER: 10 langs; EE/RE: `en`) |
 | `format_mode` | `json__false`, `json__json_xgrammar`, `yaml__false`, `dst__false` |
 | `prompt_style` | Integer prompt index |
-| `f1` | Task F1 score (`ner_f1` / `ee_arg_c_f1` / `re_f1`) |
-| `energy_j` | Total GPU energy in Joules (idle-corrected for NER) |
+| `f1` | Mean task F1 score across 3 runs (`ner_f1` / `ee_arg_c_f1` / `re_f1`) |
+| `energy_j` | Mean total GPU energy in Joules across 3 runs (idle-corrected for NER) |
 | `J_per_entity` | Joules per predicted entity (or argument / triple) |
 | `J_per_TP` | Joules per total token processed |
 | `F1_per_J` | F1 per Joule (energy efficiency) |
@@ -228,19 +277,16 @@ prompt_style) observation.
 
 ## Monitoring
 
-Start Prometheus and Grafana with the provided configs:
+Start Prometheus using the repository config:
 
 ```bash
 prometheus --config.file=monitoring/prometheus.yml
-
-# In a separate terminal:
-grafana-server --homepath /usr/share/grafana
 ```
 
-The Grafana dashboard provisions automatically from
-`monitoring/grafana/provisioning/`. The default Prometheus scrape target is
-the DCGM exporter on port 9400; adjust `monitoring/prometheus.yml` to match
-your cluster.
+The default scrape target is the DCGM exporter on port 9400; adjust
+`monitoring/prometheus.yml` to match your cluster. If you use Grafana in your
+environment, point it at this Prometheus instance and import your dashboard of
+choice.
 
 ---
 
@@ -256,10 +302,3 @@ Code is released under the MIT License.
 Datasets used (XTREME, MasakhaNER 2.0, RAMS, DocRED) are subject to their own
 respective licenses — please consult each dataset's repository for details.
 
----
-
-## Data Notes
-
-- `results/results.csv` covers NER, EE, and RE (all 100% complete).
-  the sweep scripts and evaluation code remain in the repository for
-  reproducibility.

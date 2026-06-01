@@ -42,6 +42,10 @@ cooldown_seconds=10
 # Split comma-separated prompt styles into array (e.g. "1,2,3,4,5,6,7,8")
 IFS=',' read -ra prompt_styles <<< "${SWEEP_PROMPT_STYLES}"
 
+# Resolve repository root from this script location so evaluation paths stay portable.
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT_LOCAL="$(cd "${SCRIPT_DIR}/.." && pwd)"
+
 # =============================================================================
 # ── Select Python evaluation script and extra args based on format_mode ───────
 # =============================================================================
@@ -55,10 +59,7 @@ IFS=',' read -ra prompt_styles <<< "${SWEEP_PROMPT_STYLES}"
 #   SWEEP_FILE_TYPE    – e.g. "json", "yaml", "dst"
 #   SWEEP_CONSTRAINED  – e.g. "false", "json_xgrammar"
 
-EVAL_SCRIPT_BASE="evaluation_scripts/masakha"
-MASAKHA_EVAL_PY="${EVAL_SCRIPT_BASE}/lang_eval_mlflow_masakha_sweep.py"
-MASAKHA_OTHER_FORMATS_PY="${EVAL_SCRIPT_BASE}/lang_eval_mlflow_masakha_sweep_other_formats.py"
-MASAKHA_GUIDED_PY="${EVAL_SCRIPT_BASE}/lang_eval_mlflow_masakha_sweep_guided.py"
+MASAKHA_EVAL_PY="${REPO_ROOT_LOCAL}/evaluation/masakha/lang_eval_masakha_sweep.py"
 FORMAT_EXTRA_ARG=""
 
 case "${SWEEP_FORMAT_MODE:-json__false}" in
@@ -66,32 +67,25 @@ case "${SWEEP_FORMAT_MODE:-json__false}" in
         EVAL_PY="${MASAKHA_EVAL_PY}"
         ;;
     yaml__false)
-        EVAL_PY="${MASAKHA_OTHER_FORMATS_PY}"
-        FORMAT_EXTRA_ARG="--output-format yaml"
+        EVAL_PY="${MASAKHA_EVAL_PY}"
         ;;
     dst__false)
-        EVAL_PY="${MASAKHA_OTHER_FORMATS_PY}"
-        FORMAT_EXTRA_ARG="--output-format dst"
+        EVAL_PY="${MASAKHA_EVAL_PY}"
         ;;
     xml__false)
-        EVAL_PY="${MASAKHA_OTHER_FORMATS_PY}"
-        FORMAT_EXTRA_ARG="--output-format xml"
+        EVAL_PY="${MASAKHA_EVAL_PY}"
         ;;
     json__json_xgrammar)
-        EVAL_PY="${MASAKHA_GUIDED_PY}"
-        FORMAT_EXTRA_ARG="--decoding-mode guided_json"
+        EVAL_PY="${MASAKHA_EVAL_PY}"
         ;;
     dst__dst_ebnf)
-        EVAL_PY="${MASAKHA_GUIDED_PY}"
-        FORMAT_EXTRA_ARG="--decoding-mode guided_dst"
+        EVAL_PY="${MASAKHA_EVAL_PY}"
         ;;
     dst__dst_outlines)
-        EVAL_PY="${MASAKHA_GUIDED_PY}"
-        FORMAT_EXTRA_ARG="--decoding-mode guided_dst_outlines"
+        EVAL_PY="${MASAKHA_EVAL_PY}"
         ;;
     xml__xml_xgrammar)
-        EVAL_PY="${MASAKHA_GUIDED_PY}"
-        FORMAT_EXTRA_ARG="--decoding-mode guided_xml"
+        EVAL_PY="${MASAKHA_EVAL_PY}"
         ;;
     *)
         echo "[WARN] Unknown SWEEP_FORMAT_MODE '${SWEEP_FORMAT_MODE}' — defaulting to json__false."
