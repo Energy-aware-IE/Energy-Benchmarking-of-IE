@@ -1,0 +1,2 @@
+<REPO_ROOT>/energy_ner_llm/src/serve_vllm/experiment_sweep_results/RE/sweep_re_gemma-3-4b-it_resubmit_20260709_152910/format_mode_yaml__false_3712146
+job_id: REDACTED

@@ -50,7 +50,6 @@ JSON. Source of the "+74.0% F1 surge" claim underpinning Scenario D
 (Pareto-Optimal Default) — the strongest example of constrained decoding
 *helping* a structurally rigid task rather than imposing an energy tax.
 
-
 ## format_sensitivity_re_697/
 
 `gemma4b_RE_json_unconstrained/` vs `gemma4b_RE_yaml_unconstrained/`:
@@ -95,3 +94,28 @@ finding: recall collapses under `pooled`/`tight` relative to `close`
 `pooled`/`tight` while having *intact* recall — evidence against ephemeral
 port/TIME_WAIT exhaustion as the failure mechanism, pointing instead to
 connection staleness under sustained high concurrency.
+
+## re_yaml_dst_vocab_fix/
+
+Reviewer-motivated correction to the RE (DocRED) format-sensitivity finding
+in `format_sensitivity_re_697/`. The original YAML/DST system prompts didn't
+consistently ground the model in the same closed-set relation vocabulary
+(96 DocRED relation names) that the JSON prompt always inlined, penalising
+valid-but-differently-worded relation labels under exact-match scoring. The
+templates were corrected (`{valid_relations}` injection added to YAML/DST)
+and all 4 models rerun on RE for both formats.
+
+`gemma4b_RE_yaml_fixed/`, `gemma4b_RE_dst_fixed/`, `gemma12b_RE_yaml_fixed/`,
+`gemma12b_RE_dst_fixed/`, `gemma27b_RE_yaml_fixed/`, `gemma27b_RE_dst_fixed/`,
+`llama70b_RE_yaml_fixed/`, `llama70b_RE_dst_fixed/`: raw artifacts for the 8
+corrected reruns.
+
+See `COMPARISON.md` in this folder for the full before/after analysis:
+a direct mechanism check (fraction of predicted relations actually in the
+closed set jumps from 8-22% pre-fix to 53-92% post-fix, converging toward
+JSON's ~53%) and the F1 impact (the original ~70%-relative-drop finding
+narrows to roughly 0-9%; JSON remains best-or-tied-best at 3 of 4 model
+scales, but at 4B, corrected YAML actually outperforms JSON by 8.6%). The
+original (pre-fix) numbers in `format_sensitivity_re_697/` and `results.csv`
+are left unchanged, since they accurately document what was actually
+published; this folder documents the correction on top of them.

@@ -100,7 +100,8 @@ Energy-Benchmarking-of-IE/
 │   ├── batch_size_tuning_gain/         # HTTP batch_size ablation on RE
 │   ├── llama70b_gemma27b_baselines/    # Baseline runs, Llama-3.3-70B & Gemma-3-27B
 │   ├── mistral_large_baselines/        # Baseline runs, Mistral-Large-Instruct-2411 (reviewer response)
-│   └── http_transport_ablation/        # HTTP keep-alive/pooling vs. TIME_WAIT/recall/energy (reviewer response, Appendix A.8)
+│   ├── http_transport_ablation/        # HTTP keep-alive/pooling vs. TIME_WAIT/recall/energy (reviewer response, Appendix A.8)
+│   └── re_yaml_dst_vocab_fix/          # RE YAML/DST closed-set vocabulary fix: ~70% F1 gap narrows to ~0-9% (reviewer response)
 ├── templates/                      # Chat format Jinja2 templates
 │   ├── chatml.jinja
 │   ├── llama2.jinja
@@ -271,7 +272,6 @@ over N = 3 independent runs of that configuration:
 | `results_serving_params_masakha.csv` | NER | MasakhaNER 2.0 (14) | 8 932 | one-parameter-at-a-time serving-layer ablation (see below) |
 
 ### `results.csv` / `results_masakha.csv`
-
 Each row is one (task, model, language, format_mode, prompt_style)
 configuration.
 
@@ -292,9 +292,9 @@ configuration.
 
 | Task | Models | Languages | Formats | Rows | Notes |
 |---|---|---|---|---|---|
-| NER (XTREME) | 4 | 10 | up to 8 | 2 637 | Core 4 formats at full coverage; XML/EBNF/Outlines variants added incrementally, not all model×language×prompt cells filled |
-| Event Extraction | 4 | 1 | 4 | 128 | 100% ✓ |
-| Relation Extraction | 4 | 1 | 4 | 128 | 100% ✓ |
+| NER (XTREME) | 4 | 10 | up to 8 | 2 637 |  |
+| Event Extraction | 4 | 1 | 4 | 128 |  |
+| Relation Extraction | 4 | 1 | 4 | 128 |  |
 
 `results_masakha.csv` covers NER only, across 4 output formats (`json__false`,
 `yaml__false`, `dst__false`, `xml__false`) and 14 MasakhaNER languages; not
@@ -323,7 +323,7 @@ metrics. See `examples_of_outputs/README.md` for the full mapping of each
 subfolder to the paper claim it substantiates (FSM decoding overhead,
 constrained-decoding F1 gains on EE, the 4B-vs-27B scale/efficiency
 trade-off, batch-size tuning gains, and Llama-3.3-70B / Gemma-3-27B /
-Mistral-Large-Instruct-2411 baseline comparisons). All contents are
+Mistral-Large-Instruct-2411 baseline comparisons, RE upd). All contents are
 anonymized (usernames, node names, job IDs, paths, and timestamps stripped
 or replaced with placeholders); no scientific data was altered.
 
