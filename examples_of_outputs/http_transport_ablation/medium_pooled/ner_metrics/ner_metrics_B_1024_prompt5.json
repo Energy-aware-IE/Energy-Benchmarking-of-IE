@@ -1,0 +1,117 @@
+{
+  "precision": 0.6687747035573123,
+  "recall": 0.488029997115662,
+  "f1": 0.5642821410705353,
+  "cls_report": {
+    "DAT": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "DATE": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "DIM": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "LOC": {
+      "precision": 0.6376523252922158,
+      "recall": 0.5168312840153195,
+      "f1-score": 0.5709196170118013,
+      "support": 4961
+    },
+    "MISC": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "MONEY": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "NUM": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "ORD": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "ORG": {
+      "precision": 0.5875326614408362,
+      "recall": 0.37863844118354584,
+      "f1-score": 0.46050321825629026,
+      "support": 4157
+    },
+    "ORGF": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "PER": {
+      "precision": 0.798421372191864,
+      "recall": 0.5536842105263158,
+      "f1-score": 0.6539035305818001,
+      "support": 4750
+    },
+    "PROJ": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "QUANT": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "TIME": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "WORK": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "micro avg": {
+      "precision": 0.6687747035573123,
+      "recall": 0.488029997115662,
+      "f1-score": 0.5642821410705353,
+      "support": 13868
+    },
+    "macro avg": {
+      "precision": 0.1349070905949944,
+      "recall": 0.09661026238167875,
+      "f1-score": 0.11235509105665945,
+      "support": 13868
+    },
+    "weighted avg": {
+      "precision": 0.6776945469639164,
+      "recall": 0.488029997115662,
+      "f1-score": 0.5662450150382532,
+      "support": 13868
+    }
+  },
+  "total_pred_entities": 10120,
+  "total_true_entities": 13868
+}

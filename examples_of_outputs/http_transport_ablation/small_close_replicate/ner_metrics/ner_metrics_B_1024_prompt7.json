@@ -1,0 +1,51 @@
+{
+  "precision": 0.6852753270459385,
+  "recall": 0.649697144505336,
+  "f1": 0.667012140953509,
+  "cls_report": {
+    "DATE": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "LOC": {
+      "precision": 0.6708458083832335,
+      "recall": 0.7226365652086273,
+      "f1-score": 0.6957787481804949,
+      "support": 4961
+    },
+    "ORG": {
+      "precision": 0.6143635125936011,
+      "recall": 0.43420736107770025,
+      "f1-score": 0.5088090204369274,
+      "support": 4157
+    },
+    "PER": {
+      "precision": 0.7440904419321686,
+      "recall": 0.7621052631578947,
+      "f1-score": 0.7529901196047843,
+      "support": 4750
+    },
+    "micro avg": {
+      "precision": 0.6852753270459385,
+      "recall": 0.649697144505336,
+      "f1-score": 0.667012140953509,
+      "support": 13868
+    },
+    "macro avg": {
+      "precision": 0.5073249407272508,
+      "recall": 0.4797372973610555,
+      "f1-score": 0.48939447205555164,
+      "support": 13868
+    },
+    "weighted avg": {
+      "precision": 0.6790023634567798,
+      "recall": 0.649697144505336,
+      "f1-score": 0.6593294300405587,
+      "support": 13868
+    }
+  },
+  "total_pred_entities": 13148,
+  "total_true_entities": 13868
+}

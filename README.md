@@ -57,7 +57,8 @@ Energy-Benchmarking-of-IE/
 │   ├── sweep_single_run_slurm.sh       # SLURM job script (NER)
 │   ├── sweep_single_run_slurm_ee.sh    # SLURM job script (EE)
 │   ├── sweep_single_run_slurm_re.sh    # SLURM job script (RE)
-│   └── sweep_single_run_slurm_masakha.sh
+│   ├── sweep_single_run_slurm_masakha.sh
+│   └── run_http_transport_ablation.sh  # HTTP keep-alive/pooling ablation (reviewer response, Appendix A.8)
 ├── inference/                      # Per-task inference bash scripts
 │   ├── inference_sweep_ner_standalone.sh
 │   ├── inference_sweep_ee_standalone.sh
@@ -70,9 +71,10 @@ Energy-Benchmarking-of-IE/
 │   └── gollie_prompts.py               # GoLLIE-style prompt helpers
 ├── evaluation/                     # Python evaluation scripts
 │   ├── xtreme/
-│   │   ├── lang_eval_ner_sweep.py      # NER evaluation + MLflow logging
+│   │   ├── lang_eval_ner_sweep.py      # NER evaluation + MLflow logging (HTTP_TRANSPORT_MODE/SOCKET_MONITOR instrumentation)
 │   │   ├── dspy_ner.py                 # DSPy-based NER helper
-│   │   └── utils.py                    # Shared utilities (prompts, parsing, telemetry)
+│   │   ├── utils.py                    # Shared utilities (prompts, parsing, telemetry)
+│   │   └── analyze_http_transport_ablation.py  # Statistical report for the HTTP transport ablation
 │   ├── masakha/
 │   │   └── lang_eval_masakha_sweep.py
 │   ├── ee/
@@ -97,7 +99,8 @@ Energy-Benchmarking-of-IE/
 │   ├── scale_vs_efficiency/            # Gemma-3-4B vs 27B energy/F1 trade-off on NER
 │   ├── batch_size_tuning_gain/         # HTTP batch_size ablation on RE
 │   ├── llama70b_gemma27b_baselines/    # Baseline runs, Llama-3.3-70B & Gemma-3-27B
-│   └── mistral_large_baselines/        # Baseline runs, Mistral-Large-Instruct-2411 (reviewer response)
+│   ├── mistral_large_baselines/        # Baseline runs, Mistral-Large-Instruct-2411 (reviewer response)
+│   └── http_transport_ablation/        # HTTP keep-alive/pooling vs. TIME_WAIT/recall/energy (reviewer response, Appendix A.8)
 ├── templates/                      # Chat format Jinja2 templates
 │   ├── chatml.jinja
 │   ├── llama2.jinja

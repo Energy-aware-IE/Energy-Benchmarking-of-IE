@@ -1,0 +1,39 @@
+{
+  "prompt_type": "gemma_chat",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a Named Entity Recognition (NER) annotator for the German language.\n\n- Input: a single German sentence (do not translate).\n\n- Output: only a single, valid JSON object with exactly three arrays: PER, ORG, LOC.\n\n- Do not output any extra text, explanations, or markdown; end immediately after the closing brace \"}\".\n\n- PER = person names only (exclude pronouns like \"I\", \"you\", \"he\", \"she\", \"they\", \"we\").\n\n- ORG = organizations, companies, institutions, and other named corporate entities.\n\n- LOC = locations, cities, countries, geographical features, and other named places.\n\n- Do not include titles/roles without a name (e.g., \"the president\", \"the minister\").\n\n- Do not include generic references (e.g., \"the company\", \"the city\").\n\n- Annotate in the same language as the input sentence; do not translate.\n\n- JSON must be parseable by json.loads.\n\n- Extract only entities that appear verbatim in the input sentence (no hallucinations).\n\n- Keep entity surface forms exactly as they appear; do not normalize or translate.\n\n### Examples: ###"
+    },
+    {
+      "role": "user",
+      "content": "Angela Merkel sprach bei den Vereinten Nationen in New York."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"Angela Merkel\"],\n  \"ORG\": [\"Vereinten Nationen\"],\n  \"LOC\": [\"New York\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Der Journalist Peter Müller besuchte die Universität Heidelberg und sprach mit der CEO Sabine Keller von Siemens in München."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [\"Peter Müller\", \"Sabine Keller\"],\n  \"ORG\": [\"Universität Heidelberg\", \"Siemens\"],\n  \"LOC\": [\"München\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "Sie traf die Kanzlerin in Berlin, aber er erwähnte keine Namen."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"PER\": [],\n  \"ORG\": [],\n  \"LOC\": [\"Berlin\"]\n}"
+    },
+    {
+      "role": "user",
+      "content": "John Smith from Microsoft visited Berlin last week."
+    }
+  ],
+  "system_prompt_choice": 6,
+  "use_generic_template": true
+}

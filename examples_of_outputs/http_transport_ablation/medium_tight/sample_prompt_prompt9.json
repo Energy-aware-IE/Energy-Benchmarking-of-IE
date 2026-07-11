@@ -1,0 +1,15 @@
+{
+  "prompt_type": "dspy_optimized_chat",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Given a sentence, predict all named entities and classify each as PER (person), ORG (organization), or LOC (location). Return the entity mentions exactly as they appear in the sentence.\n\n**Crucially, always return all three categories, even if the sentence contains no entities of a particular type.  This means the output should always be in the format: `### per [entity1], [entity2], ...` , `### org [entity1], [entity2], ...` , and `### loc [entity1], [entity2], ...` where each entity is a mention from the input sentence.**\n\n**Important Considerations & Domain-Specific Knowledge:**\n\n*   **Entity Boundaries:** Pay close attention to punctuation and spacing.  Entities are often delimited by spaces, commas, and other punctuation marks.  Do *not* split entities across multiple lines or include extraneous whitespace in the output.\n*   **\"First Division\" as an Organization:**  The example 2 demonstrates that phrases like \"First Division\" can be recognized as an organization (ORG).  This is a common pattern where a descriptive phrase functions as the name of a company, team, or division.\n*   **Geopolitical Entities:** Locations (LOC) can include geopolitical entities like states, countries, and regions (e.g., \"Wisconsin\").  Do not simply return the last word of the sentence as the location.\n*   **Combined Entities:** Sometimes, entities are combined (e.g., \"Superior, Wisconsin\").  Return the entire combined entity as a single mention.\n*   **No Hallucinations:** Do not invent entities that are not present in the input sentence.  If no entities are found, return empty lists for each category.\n*   **Generalizable Strategy:** The assistant appears to be using a simple string matching approach, identifying entities based on capitalization and common patterns.  However, this is prone to errors, especially with complex or ambiguous sentences.  Prioritize accuracy over speed.\n\n**Evaluation Metrics (for your reference):**\n\n*   **Precision:**  The proportion of identified entities that are actually correct.\n*   **Recall:** The proportion of actual entities in the sentence that are correctly identified.\n*   **F1-score:** The harmonic mean of precision and recall, providing a balanced measure of performance.\n\nOutput fields:\n- Per: List of person-name mentions found in the sentence (empty list if none)\n- Org: List of organisation-name mentions found in the sentence (empty list if none)\n- Loc: List of location-name mentions found in the sentence (empty list if none)"
+    },
+    {
+      "role": "user",
+      "content": "John Smith from Microsoft visited Berlin last week."
+    }
+  ],
+  "system_prompt_choice": 9,
+  "dspy_program_path": "<REPO_ROOT>/energy_ner_llm/src/serve_vllm/prompts_in_all_languages/optimized_ner_en.json"
+}

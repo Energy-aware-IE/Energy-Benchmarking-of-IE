@@ -1,0 +1,93 @@
+{
+  "precision": 0.643153225219984,
+  "recall": 0.637727141620998,
+  "f1": 0.6404286903942938,
+  "cls_report": {
+    "DAT": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "DATE": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "LOC": {
+      "precision": 0.60501381760758,
+      "recall": 0.6178189881072365,
+      "f1-score": 0.6113493567368106,
+      "support": 4961
+    },
+    "MISC": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "MONEY": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "NUM": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "ORG": {
+      "precision": 0.5435164283922749,
+      "recall": 0.5212893913880202,
+      "f1-score": 0.5321709233791748,
+      "support": 4157
+    },
+    "PER": {
+      "precision": 0.778448275862069,
+      "recall": 0.760421052631579,
+      "f1-score": 0.7693290734824282,
+      "support": 4750
+    },
+    "TIME": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "TITLE": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "UNIT": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "micro avg": {
+      "precision": 0.643153225219984,
+      "recall": 0.637727141620998,
+      "f1-score": 0.6404286903942938,
+      "support": 13868
+    },
+    "macro avg": {
+      "precision": 0.17517986562381127,
+      "recall": 0.17268449382971232,
+      "f1-score": 0.17389539578167398,
+      "support": 13868
+    },
+    "weighted avg": {
+      "precision": 0.6459836063111276,
+      "recall": 0.637727141620998,
+      "f1-score": 0.6417256840424056,
+      "support": 13868
+    }
+  },
+  "total_pred_entities": 13751,
+  "total_true_entities": 13868
+}

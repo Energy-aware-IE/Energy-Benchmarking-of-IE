@@ -1,0 +1,2 @@
+<REPO_ROOT>/energy_ner_llm/src/serve_vllm/experiment_sweep_results/multilang_xtream/sweep_de_gemma-3-4b-it_resubmit_20260709_181833/max_concurrency_1024_3712732
+job_id: REDACTED (mode=pooled, scope=medium)

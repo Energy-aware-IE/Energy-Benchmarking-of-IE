@@ -1,0 +1,51 @@
+{
+  "precision": 0.7249657064471879,
+  "recall": 0.6859676954139025,
+  "f1": 0.7049277510188958,
+  "cls_report": {
+    "LOC": {
+      "precision": 0.6858689348540499,
+      "recall": 0.7151783914533361,
+      "f1-score": 0.7002170909808565,
+      "support": 4961
+    },
+    "NUM": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "ORG": {
+      "precision": 0.6183228029867892,
+      "recall": 0.5179215780611017,
+      "f1-score": 0.5636863463804163,
+      "support": 4157
+    },
+    "PER": {
+      "precision": 0.8535602328705777,
+      "recall": 0.8025263157894736,
+      "f1-score": 0.8272569444444444,
+      "support": 4750
+    },
+    "micro avg": {
+      "precision": 0.7249657064471879,
+      "recall": 0.6859676954139025,
+      "f1-score": 0.7049277510188958,
+      "support": 13868
+    },
+    "macro avg": {
+      "precision": 0.5394379926778542,
+      "recall": 0.5089065713259778,
+      "f1-score": 0.5227900954514293,
+      "support": 13868
+    },
+    "weighted avg": {
+      "precision": 0.7230584643757044,
+      "recall": 0.6859676954139025,
+      "f1-score": 0.7028044142176616,
+      "support": 13868
+    }
+  },
+  "total_pred_entities": 13122,
+  "total_true_entities": 13868
+}

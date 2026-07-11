@@ -8,10 +8,12 @@ Utility functions (prompt building, parsing, telemetry scraping, etc.) live in u
 
 import argparse
 import asyncio
+import contextlib
 import datetime
 import glob
 import json
 import os
+import subprocess
 import time
 
 import aiohttp
@@ -676,11 +678,57 @@ async def evaluate_ner_pipeline_xtreme(
 
     # Configure async HTTP session with generous timeouts
     timeout = ClientTimeout(total=None, sock_connect=30, sock_read=900)
-    connector = TCPConnector(limit=4096, enable_cleanup_closed=True, force_close=False)
+
+    # HTTP_TRANSPORT_MODE selects the connection-pooling strategy (reviewer
+    # question: does keep-alive/connection pooling vs. per-request connections
+    # affect TIME_WAIT churn, recall, and energy?). Defaults to "pooled",
+    # the configuration used for all published sweep numbers.
+    #   pooled (default): shared pool, keep-alive on, limit=4096
+    #   close:            keep-alive off, one fresh TCP connection per request
+    #   tight:            keep-alive on, pool size capped to max_concurrency
+    http_transport_mode = os.environ.get("HTTP_TRANSPORT_MODE", "pooled").lower()
+    if http_transport_mode == "close":
+        connector = TCPConnector(limit=4096, enable_cleanup_closed=True, force_close=True)
+    elif http_transport_mode == "tight":
+        connector = TCPConnector(limit=max_concurrency, enable_cleanup_closed=True, force_close=False)
+    else:
+        connector = TCPConnector(limit=4096, enable_cleanup_closed=True, force_close=False)
+    print(f"[INFO] HTTP_TRANSPORT_MODE={http_transport_mode}")
 
     # Semaphore limits concurrent HTTP requests to avoid TCP flooding / TIME_WAIT exhaustion
     semaphore = asyncio.Semaphore(max_concurrency)
     print(f"[INFO] Semaphore: max {max_concurrency} concurrent HTTP requests")
+
+    # Optional TIME_WAIT socket diagnostic (reviewer question: does connection
+    # pooling/keep-alive actually reduce TIME_WAIT churn?). Opt-in via
+    # SOCKET_MONITOR=1 so it never runs during normal/published sweeps.
+    socket_monitor_task = None
+    socket_log_path = None
+    if os.environ.get("SOCKET_MONITOR", "0") == "1":
+        socket_log_path = os.path.join(
+            os.environ.get("ARTIFACTS_DIR", "."),
+            f"socket_timewait_{http_transport_mode}.csv",
+        )
+
+        async def _poll_time_wait(log_path):
+            with open(log_path, "w") as f:
+                f.write("timestamp,time_wait_count\n")
+                while True:
+                    try:
+                        out = subprocess.run(
+                            ["ss", "-tan", "state", "time-wait"],
+                            capture_output=True,
+                            text=True,
+                            timeout=5,
+                        )
+                        count = max(0, len(out.stdout.splitlines()) - 1)
+                    except Exception:
+                        count = -1
+                    f.write(f"{time.time()},{count}\n")
+                    f.flush()
+                    await asyncio.sleep(2)
+
+        socket_monitor_task = asyncio.create_task(_poll_time_wait(socket_log_path))
 
     async with aiohttp.ClientSession(timeout=timeout, connector=connector) as session:
         # Process dataset in batches (32-128 sentences per batch)
@@ -810,6 +858,12 @@ async def evaluate_ner_pipeline_xtreme(
                     all_gold.append(gold_tags)
                     all_pred.append(["O"] * len(gold_tags))  # All "Outside" tags
                 continue
+
+    if socket_monitor_task is not None:
+        socket_monitor_task.cancel()
+        with contextlib.suppress(asyncio.CancelledError):
+            await socket_monitor_task
+        print(f"[INFO] TIME_WAIT socket log written to {socket_log_path}")
 
     # ===== CALCULATE FINAL NER METRICS =====
     # Use seqeval library to compute precision, recall, F1 at entity span level

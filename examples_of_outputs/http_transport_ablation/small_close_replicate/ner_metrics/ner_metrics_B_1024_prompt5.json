@@ -1,0 +1,129 @@
+{
+  "precision": 0.6723333101093848,
+  "recall": 0.695846553216037,
+  "f1": 0.6838878849084015,
+  "cls_report": {
+    "DAT": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "DATE": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "DIM": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "EVENT": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "LOC": {
+      "precision": 0.634632339975313,
+      "recall": 0.7254585768998186,
+      "f1-score": 0.6770127915726111,
+      "support": 4961
+    },
+    "MAT": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "MISC": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "MONEY": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "NUM": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "ORD": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "ORG": {
+      "precision": 0.5932069510268563,
+      "recall": 0.5419773875390906,
+      "f1-score": 0.566436203645506,
+      "support": 4157
+    },
+    "ORGF": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "ORGR": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "PER": {
+      "precision": 0.8043202033036849,
+      "recall": 0.7995789473684211,
+      "f1-score": 0.8019425675675675,
+      "support": 4750
+    },
+    "PROJ": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "QUANT": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "TIME": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "micro avg": {
+      "precision": 0.6723333101093848,
+      "recall": 0.695846553216037,
+      "f1-score": 0.6838878849084015,
+      "support": 13868
+    },
+    "macro avg": {
+      "precision": 0.1195387937826973,
+      "recall": 0.12158911245925473,
+      "f1-score": 0.12031715075209908,
+      "support": 13868
+    },
+    "weighted avg": {
+      "precision": 0.6803355422359874,
+      "recall": 0.695846553216037,
+      "f1-score": 0.6866572651782548,
+      "support": 13868
+    }
+  },
+  "total_pred_entities": 14353,
+  "total_true_entities": 13868
+}

@@ -1,0 +1,75 @@
+{
+  "precision": 0.6297154628556715,
+  "recall": 0.3526824343813095,
+  "f1": 0.4521377397735151,
+  "cls_report": {
+    "DAT": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "DATE": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "EVENT": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "LOC": {
+      "precision": 0.6316205533596838,
+      "recall": 0.3221124773231203,
+      "f1-score": 0.42664530770257636,
+      "support": 4961
+    },
+    "MISC": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "NUM": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "ORG": {
+      "precision": 0.4970131421744325,
+      "recall": 0.3002165022853019,
+      "f1-score": 0.3743251349730054,
+      "support": 4157
+    },
+    "PER": {
+      "precision": 0.756007393715342,
+      "recall": 0.4305263157894737,
+      "f1-score": 0.5486250838363514,
+      "support": 4750
+    },
+    "micro avg": {
+      "precision": 0.6297154628556715,
+      "recall": 0.3526824343813095,
+      "f1-score": 0.4521377397735151,
+      "support": 13868
+    },
+    "macro avg": {
+      "precision": 0.23558013615618228,
+      "recall": 0.131606911924737,
+      "f1-score": 0.16869944081399163,
+      "support": 13868
+    },
+    "weighted avg": {
+      "precision": 0.6338757079163818,
+      "recall": 0.3526824343813095,
+      "f1-score": 0.452742003592294,
+      "support": 13868
+    }
+  },
+  "total_pred_entities": 7767,
+  "total_true_entities": 13868
+}
