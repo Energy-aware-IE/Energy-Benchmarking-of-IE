@@ -1,0 +1,11 @@
+{
+  "prompt_type": "ee_guided",
+  "system_prompt_choice": 1,
+  "n_shots": 0,
+  "valid_roles_for_sample": [
+    "place",
+    "victim"
+  ],
+  "system": "You are an Event Argument Extraction (EAE) system for the English language.\nFind arguments for the specific valid roles provided in the user prompt.\nReturn the output as a single JSON object mapping role names to argument text spans.",
+  "user": "Document:\nThree specific points illustrate why Americans see Trump as the problem :\n1 ) Trump has trouble working with people beyond his base .\nIn Saddam Hussein 's Iraq that might work when opponents can be thrown in jail or exterminated .\nIn the United States that wo n't fly : presidents must build bridges within and beyond their core support to resolve challenges .\nWithout alliances , a president ca n't get approval to get things done .\n\nEvent trigger: \"exterminated\"\nEvent type: life.die.n/a\nValid roles: place, victim\nExtract the event arguments as a JSON object."
+}

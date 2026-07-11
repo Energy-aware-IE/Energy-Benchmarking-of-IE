@@ -1,0 +1,51 @@
+{
+  "precision": 0.7706369374538896,
+  "recall": 0.6778915488895298,
+  "f1": 0.7212951241032723,
+  "cls_report": {
+    "LOC": {
+      "precision": 0.685777695579804,
+      "recall": 0.7474299536383794,
+      "f1-score": 0.7152777777777778,
+      "support": 4961
+    },
+    "MISC": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0
+    },
+    "ORG": {
+      "precision": 0.7753357753357754,
+      "recall": 0.4582631705556892,
+      "f1-score": 0.5760508013305111,
+      "support": 4157
+    },
+    "PER": {
+      "precision": 0.8744228993536473,
+      "recall": 0.7974736842105263,
+      "f1-score": 0.834177493944065,
+      "support": 4750
+    },
+    "micro avg": {
+      "precision": 0.7706369374538896,
+      "recall": 0.6778915488895298,
+      "f1-score": 0.7212951241032723,
+      "support": 13868
+    },
+    "macro avg": {
+      "precision": 0.5838840925673067,
+      "recall": 0.5007917021011488,
+      "f1-score": 0.5313765182630885,
+      "support": 13868
+    },
+    "weighted avg": {
+      "precision": 0.7772370015699488,
+      "recall": 0.6778915488895298,
+      "f1-score": 0.714268772203692,
+      "support": 13868
+    }
+  },
+  "total_pred_entities": 12199,
+  "total_true_entities": 13868
+}

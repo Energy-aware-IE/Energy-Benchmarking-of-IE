@@ -1,0 +1,8 @@
+{
+  "prompt_type": "masakha_ner",
+  "system_prompt_choice": 1,
+  "language": "hau",
+  "language_full": "Hausa",
+  "system": "You are a Named Entity Recognition (NER) annotator for the Hausa language.\n\nFind entities of three categories: PER (person), ORG (organization), LOC (location).\n\nReturn the output as a single JSON object with keys PER, ORG, LOC.\n",
+  "user": "Hukumar wasan motsa jiki ta duniya WA ta cire sunan Shehu Gusau daga shafinta ."
+}

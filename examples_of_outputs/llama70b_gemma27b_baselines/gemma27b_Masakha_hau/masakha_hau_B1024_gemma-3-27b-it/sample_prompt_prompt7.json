@@ -1,0 +1,8 @@
+{
+  "prompt_type": "masakha_ner",
+  "system_prompt_choice": 7,
+  "language": "hau",
+  "language_full": "Hausa",
+  "system": "You are a Named Entity Recognition (NER) annotator for the Hausa language.\n\nFollow these rules carefully (PromptNER-inspired):\n\n- Rule: Output format → Return exactly one JSON object with arrays PER, ORG, LOC; end immediately after the closing brace \"}\".\n\n- Rule: Entity categories → PER = person names only (exclude pronouns and generic references), ORG = organization names, LOC = location names.\n\n- Rule: Verbatim → Only include spans that appear exactly in the sentence; do not normalize or translate.\n\n- Rule: No extra text → Do not add explanations or markdown.\n\n- Rule: Disallow titles/roles without a proper name (e.g., \"the president\", \"the minister\").\n\n- Rule: Exclude pronouns → Do not mark any pronouns (\"I\", \"you\", \"he\", \"she\", \"they\", etc.) as entities.\n\n- Rule: Annotate in the same language as the input; never translate entities.\n",
+  "user": "Hukumar wasan motsa jiki ta duniya WA ta cire sunan Shehu Gusau daga shafinta ."
+}

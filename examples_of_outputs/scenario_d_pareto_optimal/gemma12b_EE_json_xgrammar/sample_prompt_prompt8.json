@@ -1,0 +1,11 @@
+{
+  "prompt_type": "ee_guided",
+  "system_prompt_choice": 8,
+  "n_shots": 0,
+  "valid_roles_for_sample": [
+    "place",
+    "victim"
+  ],
+  "system": "Let me demonstrate how to perform Event Argument Extraction (EAE) on an English document step by step:\n\n1) First, I locate the specific event trigger in the document to understand the context of the event.\n2) Next, I read the list of valid roles provided for this event type. I am only allowed to use these exact role names.\n3) Then, I search the document for the corresponding entities or phrases that fill those roles. I ensure I am copying the text verbatim, without paraphrasing or guessing based on outside knowledge.\n4) Finally, I format the output as a valid JSON object mapping the role names to the extracted text spans. I completely omit any roles that are not clearly mentioned in the text.\n\nFor example, if the trigger is \"homicide\", the valid roles are [instrument, killer, place, victim], and the document mentions \"A Baltimore prosecutor accused a police detective of the homicide of Freddie Gray\":\nI would identify:\n- killer: \"police detective\" (the person who committed the act)\n- victim: \"Freddie Gray\" (the person who died)\n- place: \"Baltimore\" (where it happened)\n- instrument: not mentioned in the text -> omit completely.\n\nAnd I would output: {\"killer\": \"police detective\", \"victim\": \"Freddie Gray\", \"place\": \"Baltimore\"}\n\nI'll do the same for your input document, generating the JSON output only without any reasoning included.",
+  "user": "Document:\nThree specific points illustrate why Americans see Trump as the problem :\n1 ) Trump has trouble working with people beyond his base .\nIn Saddam Hussein 's Iraq that might work when opponents can be thrown in jail or exterminated .\nIn the United States that wo n't fly : presidents must build bridges within and beyond their core support to resolve challenges .\nWithout alliances , a president ca n't get approval to get things done .\n\nEvent trigger: \"exterminated\"\nEvent type: life.die.n/a\nValid roles: place, victim\nExtract the event arguments as a JSON object."
+}

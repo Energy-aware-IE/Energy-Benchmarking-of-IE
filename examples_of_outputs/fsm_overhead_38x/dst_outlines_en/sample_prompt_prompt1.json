@@ -1,0 +1,15 @@
+{
+  "prompt_type": "gemma_chat",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a Named Entity Recognition (NER) annotator for the English language.\n\nFind entities of three categories: PER (person), ORG (organization), LOC (location).\n\nReturn the output as a single JSON object with keys PER, ORG, LOC.\n"
+    },
+    {
+      "role": "user",
+      "content": "John Smith from Microsoft visited Berlin last week."
+    }
+  ],
+  "system_prompt_choice": 1,
+  "use_generic_template": true
+}

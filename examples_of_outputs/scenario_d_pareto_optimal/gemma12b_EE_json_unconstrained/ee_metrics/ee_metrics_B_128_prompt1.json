@@ -1,0 +1,12 @@
+{
+  "arg_i_precision": 0.0,
+  "arg_i_recall": 0.0,
+  "arg_i_f1": 0.0,
+  "arg_c_precision": 0.0,
+  "arg_c_recall": 0.0,
+  "arg_c_f1": 0.0,
+  "total_gold": 2188,
+  "total_pred": 0,
+  "tp_arg_i": 0,
+  "tp_arg_c": 0
+}

@@ -1,0 +1,5 @@
+{
+  "prompt_type": "gollie_completion",
+  "prompt": "from dataclasses import dataclass\n\nclass Template:\n    pass\n\n@dataclass\nclass PER(Template):\n    \"\"\"English personal names. Includes individual people (first + last name, possibly titles).\n    Exclude organizations and places.\"\"\"\n    mention: str\n\n@dataclass\nclass ORG(Template):\n    \"\"\"Organizations in English (companies, government bodies, parties, NGOs, international orgs).\n    Exclude persons and locations.\"\"\"\n    mention: str\n\n@dataclass\nclass LOC(Template):\n    \"\"\"Geographical names in English (cities, countries, regions, landmarks).\n    Exclude persons and organizations.\"\"\"\n    mention: str\n\ntext = \"John Smith from Microsoft visited Berlin last week.\"\n# Annotate entities in the German language.\nresult = [\n",
+  "use_generic_template": true
+}

@@ -1,0 +1,11 @@
+{
+  "prompt_type": "ee_chat",
+  "system_prompt_choice": 7,
+  "n_shots": 0,
+  "valid_roles_for_sample": [
+    "place",
+    "victim"
+  ],
+  "system": "Event Argument Extraction Rules for English:\n1. Read the provided document and locate the event trigger word.\n2. Review the provided list of valid roles for this specific event type.\n3. For each valid role, find the exact argument span in the document.\n4. Do not mark roles that do not exist in the text, and do not invent new roles.\n5. Copy the argument spans verbatim from the document without paraphrasing.\n6. Output in JSON format with exactly the role names as keys and spans as values.\n7. End the output with the closing brace and nothing more.",
+  "user": "Document:\nThree specific points illustrate why Americans see Trump as the problem :\n1 ) Trump has trouble working with people beyond his base .\nIn Saddam Hussein 's Iraq that might work when opponents can be thrown in jail or exterminated .\nIn the United States that wo n't fly : presidents must build bridges within and beyond their core support to resolve challenges .\nWithout alliances , a president ca n't get approval to get things done .\n\nEvent trigger: \"exterminated\"\nEvent type: life.die.n/a\nValid roles: place, victim\n\nExtract the event arguments as a JSON object."
+}

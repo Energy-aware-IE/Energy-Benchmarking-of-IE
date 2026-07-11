@@ -1,0 +1,2 @@
+[REDACTED_TIMESTAMP] Starting DCGM scrape: interval=0.100s, timeout=0.200s, url=http://REDACTED:9400/metrics
+[REDACTED_TIMESTAMP] Metrics collection stopping due to signal 15

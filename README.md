@@ -86,7 +86,18 @@ Energy-Benchmarking-of-IE/
 │   ├── inference/Dockerfile            # Training/fine-tuning container
 │   └── vllm_serve_otel/Dockerfile      # vLLM serving container with OpenTelemetry
 ├── results/
-│   └── results.csv                     # Aggregated results (NER, EE, RE — 1 696 rows)
+│   ├── results.csv                     # Aggregated NER/EE/RE results, XTREME languages (2 893 rows)
+│   ├── results_masakha.csv             # Aggregated NER results, MasakhaNER 2.0 languages (1 359 rows)
+│   ├── results_serving_params.csv      # Serving-layer parameter ablation, XTREME (8 491 rows)
+│   └── results_serving_params_masakha.csv  # Serving-layer parameter ablation, MasakhaNER (8 932 rows)
+├── examples_of_outputs/            # Curated raw run artifacts backing specific paper claims
+│   ├── README.md                       # Maps each subfolder to the claim it supports
+│   ├── fsm_overhead_38x/               # FSM (Outlines) energy inflation up to ~38–44x
+│   ├── scenario_d_pareto_optimal/      # xgrammar +74.0% F1 surge on EE
+│   ├── scale_vs_efficiency/            # Gemma-3-4B vs 27B energy/F1 trade-off on NER
+│   ├── batch_size_tuning_gain/         # HTTP batch_size ablation on RE
+│   ├── llama70b_gemma27b_baselines/    # Baseline runs, Llama-3.3-70B & Gemma-3-27B
+│   └── mistral_large_baselines/        # Baseline runs, Mistral-Large-Instruct-2411 (reviewer response)
 ├── templates/                      # Chat format Jinja2 templates
 │   ├── chatml.jinja
 │   ├── llama2.jinja
@@ -246,32 +257,72 @@ combination. Results are logged to MLflow automatically.
 
 ## Results
 
-`results/results.csv` contains the aggregated experimental results for all
-completed tasks. Each row is one (task, model, language, format_mode,
-prompt_style) configuration, where metrics are already averaged over 3
-independent runs (N = 3) of that same configuration.
+The `results/` directory has four aggregated CSVs, each row already averaged
+over N = 3 independent runs of that configuration:
+
+| File | Task(s) | Languages | Rows | What it sweeps |
+|---|---|---|---|---|
+| `results.csv` | NER, EE, RE | XTREME (10) / `en` | 2 893 | model × language × output format × decoding × prompt style |
+| `results_masakha.csv` | NER | MasakhaNER 2.0 (14) | 1 359 | model × language × output format × prompt style |
+| `results_serving_params.csv` | NER, EE, RE | XTREME (10) / `en` | 8 491 | one-parameter-at-a-time serving-layer ablation (see below) |
+| `results_serving_params_masakha.csv` | NER | MasakhaNER 2.0 (14) | 8 932 | one-parameter-at-a-time serving-layer ablation (see below) |
+
+### `results.csv` / `results_masakha.csv`
+
+Each row is one (task, model, language, format_mode, prompt_style)
+configuration.
 
 | Column | Description |
 |---|---|
 | `task` | `NER`, `EE`, or `RE` |
 | `model` | `4B`, `12B`, `27B`, `70B` |
-| `language` | ISO code (NER: 10 langs; EE/RE: `en`) |
-| `format_mode` | `json__false`, `json__json_xgrammar`, `yaml__false`, `dst__false` |
-| `prompt_style` | Integer prompt index |
+| `language` | ISO code (`results.csv` NER: 10 XTREME langs, EE/RE: `en`; `results_masakha.csv`: 14 MasakhaNER langs) |
+| `format_mode` | `json__false`, `json__json_xgrammar`, `yaml__false`, `dst__false`, plus (in `results.csv`) `xml__false`, `xml__xml_xgrammar`, `dst__dst_ebnf`, `dst__dst_outlines` |
+| `prompt_style` | Integer prompt index (P1–P9 for NER, P1–P8 for EE/RE) |
 | `f1` | Mean task F1 score across 3 runs (`ner_f1` / `ee_arg_c_f1` / `re_f1`) |
-| `energy_j` | Mean total GPU energy in Joules across 3 runs (idle-corrected for NER) |
+| `energy_j` | Mean total GPU energy in Joules across 3 runs (idle-corrected) |
 | `J_per_entity` | Joules per predicted entity (or argument / triple) |
-| `J_per_TP` | Joules per total token processed |
+| `J_per_TP` | Joules per true positive |
 | `F1_per_J` | F1 per Joule (energy efficiency) |
 
-**Coverage** (rows / expected):
+**Coverage** (`results.csv`, rows by task):
 
-| Task | Models | Languages | Formats | Prompts | Rows | Complete |
-|---|---|---|---|---|---|---|
-| NER (XTREME) | 4 | 10 | 4 | 9 | 1 440 | 100% ✓ |
-| Event Extraction | 4 | 1 | 4 | 8 | 128 | 100% ✓ |
-| Relation Extraction | 4 | 1 | 4 | 8 | 128 | 100% ✓ |
-| **Total** | | | | | **1 696** | |
+| Task | Models | Languages | Formats | Rows | Notes |
+|---|---|---|---|---|---|
+| NER (XTREME) | 4 | 10 | up to 8 | 2 637 | Core 4 formats at full coverage; XML/EBNF/Outlines variants added incrementally, not all model×language×prompt cells filled |
+| Event Extraction | 4 | 1 | 4 | 128 | 100% ✓ |
+| Relation Extraction | 4 | 1 | 4 | 128 | 100% ✓ |
+
+`results_masakha.csv` covers NER only, across 4 output formats (`json__false`,
+`yaml__false`, `dst__false`, `xml__false`) and 14 MasakhaNER languages; not
+every model × language × format × prompt cell is filled (1 359 / a larger
+theoretical maximum).
+
+### `results_serving_params.csv` / `results_serving_params_masakha.csv`
+
+Each row is one (task, model, language, `param_changed`, `param_value`,
+prompt_style) configuration — the one-parameter-at-a-time (OPAAT) serving-layer
+sweep backing Table 3/4 and Figure 4 of the paper. `param_changed` is one of:
+`batch_size`, `max_concurrency`, `max_num_seqs`, `max_new_tokens`,
+`max_model_len`, `max_num_batched_tokens`, `block_size`, `kv_cache_dtype`,
+`enable_prefix_caching`, `enable_chunked_prefill`, `calculate_kv_scales`,
+`tensor_parallel_size`. All other columns match the schema above.
+
+---
+
+## Example Raw Outputs
+
+`examples_of_outputs/` contains a curated subset of raw per-run artifacts
+(`mean_metrics_*.json`, `gpu_metrics.csv`, generated responses, telemetry)
+that back specific headline numbers cited in the paper and in the rebuttal to
+reviewers — as opposed to `results/`, which only has the final aggregated
+metrics. See `examples_of_outputs/README.md` for the full mapping of each
+subfolder to the paper claim it substantiates (FSM decoding overhead,
+constrained-decoding F1 gains on EE, the 4B-vs-27B scale/efficiency
+trade-off, batch-size tuning gains, and Llama-3.3-70B / Gemma-3-27B /
+Mistral-Large-Instruct-2411 baseline comparisons). All contents are
+anonymized (usernames, node names, job IDs, paths, and timestamps stripped
+or replaced with placeholders); no scientific data was altered.
 
 ---
 

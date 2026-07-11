@@ -1,0 +1,11 @@
+{
+  "prompt_type": "ee_chat",
+  "system_prompt_choice": 5,
+  "n_shots": 2,
+  "valid_roles_for_sample": [
+    "place",
+    "victim"
+  ],
+  "system": "You are an Event Argument Extraction (EAE) system for the English language.\n- Input: a single document snippet, an event trigger, and a list of valid roles.\n- Output: only a single, valid JSON object mapping valid role names to argument spans.\n- Do not output any extra text, explanations, or markdown; end immediately after the closing brace \"}\".\n- Use ONLY the role names from the provided valid roles list. Omit roles that have no argument.\n- JSON must be parseable by json.loads.\n- Extract only argument spans that appear verbatim in the document (no hallucinations).\n- Keep surface forms exactly as they appear; do not normalize or paraphrase.\n\n### Examples: ###",
+  "user": "Document:\nThree specific points illustrate why Americans see Trump as the problem :\n1 ) Trump has trouble working with people beyond his base .\nIn Saddam Hussein 's Iraq that might work when opponents can be thrown in jail or exterminated .\nIn the United States that wo n't fly : presidents must build bridges within and beyond their core support to resolve challenges .\nWithout alliances , a president ca n't get approval to get things done .\n\nEvent trigger: \"exterminated\"\nEvent type: life.die.n/a\nValid roles: place, victim\n\nExtract the event arguments as a JSON object."
+}

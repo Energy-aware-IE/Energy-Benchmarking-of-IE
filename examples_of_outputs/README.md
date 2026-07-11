@@ -1,0 +1,67 @@
+# Examples of Outputs
+
+This directory contains a curated subset of raw run artifacts (per-prompt
+`mean_metrics_*.json`, `gpu_metrics.csv`, inference logs, telemetry) backing
+the specific numbers cited in the paper and in the rebuttal to reviewers.
+It is not the full experiment archive — just the runs needed to verify the
+headline claims below.
+
+All contents are anonymized. `gpu_metrics.csv` timestamps were converted from
+absolute wall-clock time to elapsed seconds from the start of each run,
+preserving the 100ms polling interval structure without revealing the
+calendar date/time of any experiment. No scientific data (F1, energy,
+latency, token counts) was altered.
+
+## mistral_large_baselines/
+
+Baseline runs (`prompt_styles=1-9`, default serving config) for
+Mistral-Large-Instruct-2411 across all four tasks: `NER_de/`, `EE/`, `RE/`,
+`MasakhaNER_hau/`. Added in response to the reviewer's request for a modern,
+high-parameter inter-family reference point beyond Llama-3.3-70B.
+
+## llama70b_gemma27b_baselines/
+
+Matching baseline runs for Llama-3.3-70B and Gemma-3-27B on the same four
+tasks (`{model}_NER_de/`, `{model}_EE/`, `{model}_RE/`, `{model}_Masakha_hau/`).
+Comparison anchors for the Mistral-Large numbers above — shows Mistral-Large
+does not uniformly outperform either smaller/older model despite having
+~1.8x Llama-3.3-70B's parameters, while consistently costing 45-73% more
+energy. Direct evidence for the paper's claim that energy efficiency
+"cannot be predicted by model size alone."
+
+## fsm_overhead_38x/
+
+Source data for the "FSMs (Outlines) inflate energy up to 38x" paper findings:
+
+- `dst_outlines_en/` + `json_unconstrained_en/`: Llama-3.3-70B, XTREME NER,
+  English. Ratio of `energy_corrected` between these two is 37.76x, the
+  basis of the "~38x" figure.
+- `gemma12b_xml_xgrammar_hau_43x/`: Gemma-3-12B, MasakhaNER Hausa,
+  XML+xgrammar. This is the actual highest ratio anywhere in the dataset
+  (43.9x vs. the JSON-unconstrained baseline), kept alongside the cited
+  38x example for completeness.
+
+## scenario_d_pareto_optimal/
+
+`gemma12b_EE_json_xgrammar/` vs `gemma12b_EE_json_unconstrained/`:
+Gemma-3-12B on Event Extraction (RAMS), with and without xgrammar-enforced
+JSON. Source of the "+74.0% F1 surge" claim underpinning Scenario D
+(Pareto-Optimal Default) — the strongest example of constrained decoding
+*helping* a structurally rigid task rather than imposing an energy tax.
+
+
+## format_sensitivity_re_697/
+
+`gemma4b_RE_json_unconstrained/` vs `gemma4b_RE_yaml_unconstrained/`:
+Gemma-3-4B on Relation Extraction (DocRED). Source of the "-69.7% F1 drop"
+claim (Section 5.2: "RE strictly requires JSON... adopting alternatives
+such as YAML results in severe F1 degradation, up to -69.7%"). Verified
+exactly: mean `re_f1` across all 8 prompts is 0.06663 for JSON vs 0.02019
+for YAML, a 69.70% relative drop.
+
+## batch_size_tuning_gain/
+
+`batch_size_64/` vs `batch_size_256/`: Llama-3.3-70B on RE (DocRED), serving
+parameter ablation. Source of the "+50.4% F1/kJ" gain from tuning HTTP
+client batch_size, evidence for Scenario B (Maximum Tuning Gain) and the
+"Serving limits shift the frontier" paper finding.
